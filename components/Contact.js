@@ -19,6 +19,10 @@ const ContactContainer = styled.div`
   background: #fff;
   width: 50%;
   height: 100%;
+
+  @media screen and (max-width: 1090px) {
+    width: 100%;
+  }
 `;
 const IconWrapper = styled.div`
   padding: 10px;

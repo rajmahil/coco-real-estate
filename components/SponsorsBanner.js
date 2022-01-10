@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { useState, useEffect } from "react";
 import Image from "next/image";
 import caikoz from "../public/Images/caikoz.png";
 import canary from "../public/Images/canary.png";
@@ -6,6 +7,13 @@ import collective from "../public/Images/collective.png";
 import schwinghammer from "../public/Images/schwinghammer.png";
 import urbanscape from "../public/Images/urbanscape.png";
 import { AiFillStar } from "react-icons/ai";
+
+function getWindowDimensions() {
+  if (typeof window !== "undefined") {
+    const { innerWidth: width } = window;
+    return width;
+  }
+}
 
 const BannerContainer = styled.div`
   background: #f2eae2;
@@ -16,7 +24,7 @@ const BannerContainer = styled.div`
 
   @media screen and (max-width: 1090px) {
     height: auto;
-    padding: 24px;
+    padding: 20px 10px;
   }
 `;
 const BannerWrap = styled.div`
@@ -67,6 +75,19 @@ const StarWrap = styled.div`
 `;
 
 const SponsorsBanner = () => {
+  const [windowDimensions, setWindowDimensions] = useState(0);
+  useEffect(() => {
+    setWindowDimensions(getWindowDimensions());
+  }, []);
+
+  useEffect(() => {
+    function handleResize() {
+      setWindowDimensions(getWindowDimensions());
+    }
+
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
   return (
     <BannerContainer>
       <BannerWrap>
@@ -81,27 +102,40 @@ const SponsorsBanner = () => {
           </StarWrap>
         </GridWrap>
         <GridWrap>
-          <ImageWrap style={{ width: "50%" }}>
+          <ImageWrap
+            style={{ width: `${windowDimensions < 600 ? "70%" : "50%"}` }}
+          >
             <Image src={caikoz} />
           </ImageWrap>
         </GridWrap>
         <GridWrap>
-          <ImageWrap style={{ width: "45%" }}>
+          <ImageWrap
+            style={{ width: `${windowDimensions < 600 ? "60%" : "45%"}` }}
+          >
             <Image src={canary} />
           </ImageWrap>
         </GridWrap>
         <GridWrap>
-          <ImageWrap style={{ width: "65%", paddingTop: "8px" }}>
+          <ImageWrap
+            style={{
+              width: `${windowDimensions < 600 ? "85%" : "65%"}`,
+              paddingTop: "8px",
+            }}
+          >
             <Image src={collective} />
           </ImageWrap>
         </GridWrap>
         <GridWrap>
-          <ImageWrap style={{ width: "70%" }}>
+          <ImageWrap
+            style={{ width: `${windowDimensions < 600 ? "90%" : "70%"}` }}
+          >
             <Image src={schwinghammer} />
           </ImageWrap>
         </GridWrap>
         <GridWrap>
-          <ImageWrap style={{ width: "55%" }}>
+          <ImageWrap
+            style={{ width: `${windowDimensions < 600 ? "75%" : "55%"}` }}
+          >
             <Image src={urbanscape} />
           </ImageWrap>
         </GridWrap>

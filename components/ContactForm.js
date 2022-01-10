@@ -17,7 +17,7 @@ const ContactFromHeading = styled.h2`
   font-weight: 800;
 
   @media screen and (max-width: 600px) {
-    font-size: 1.8em;
+    font-size: 1.5em;
   }
 `;
 const ContactFromSubheading = styled.p`
@@ -28,6 +28,8 @@ const ContactFromSubheading = styled.p`
 
   @media screen and (max-width: 600px) {
     margin-bottom: 18px;
+    margin-top: 10px;
+    font-size: 0.9em;
   }
 `;
 const ContactFormWrap = styled.form`

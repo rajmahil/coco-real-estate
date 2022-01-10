@@ -93,6 +93,13 @@ const FooterLinks = styled.text`
     opacity: 1;
   }
 `;
+const FooterDescription = styled.p`
+  width: auto;
+  color: #fff;
+  opacity: 0.5;
+  max-width: 350px;
+  line-height: 25px;
+`;
 
 const Footer = () => {
   const [curDate, setCurDate] = useState();
@@ -108,6 +115,9 @@ const Footer = () => {
           <ImageWrap>
             <Image src={cocoCreativeLogo} />
           </ImageWrap>
+          <FooterDescription>
+            We build websites for construction businesses that generate results.
+          </FooterDescription>
         </FooterColLogo>
         <FooterColLinks>
           <FooterCols>

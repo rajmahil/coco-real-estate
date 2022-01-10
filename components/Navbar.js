@@ -1,4 +1,6 @@
 import styled from "styled-components";
+import Image from "next/image";
+import CocoCreativeMainLogo from "../public/Images/CocoCreativeMainLogo.png";
 import { useState, useEffect } from "react";
 import MainButton from "./custom/MainButton";
 import Link from "next/link";
@@ -17,7 +19,7 @@ const NavbarContainer = styled.nav`
   background: ${({ scrollPosition }) =>
     scrollPosition > 100 ? "rgba(255, 255, 255, 0.8)" : "none"};
   transition: all 0.3s ease-out;
-  padding: 0px 22px;
+  padding: 14px;
 `;
 const NavbarWrap = styled.div`
   width: auto;
@@ -63,7 +65,11 @@ const Navbar = ({ isOpen, toggle }) => {
     <NavbarContainer scrollPosition={scrollPosition}>
       <NavbarWrap>
         <Link href="/" passhref>
-          <h1>Navbar</h1>
+          {scrollPosition < 100 ? (
+            <Image src={CocoCreativeMainLogo} width={222} height={74.37} />
+          ) : (
+            <Image src={CocoCreativeMainLogo} width={177.6} height={59.5} />
+          )}
         </Link>
         <NavLinksWrap>
           <div onClick={toggle}>
