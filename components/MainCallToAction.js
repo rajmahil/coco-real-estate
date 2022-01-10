@@ -47,9 +47,9 @@ const MainCallToAction = () => {
           <TextWrap>
             <SectionHeading>Ready to get started? </SectionHeading>
             <Paragraph style={{ color: "#fff", marginTop: "5px" }}>
-              We'll review your current website and offer solutions to improve
-              your online presence. It's free and we'll leave you with useful
-              resources to help grow your business.
+              We&apos;ll review your current website and offer solutions to
+              improve your online presence. It&apos;s free and we&apos;ll leave
+              you with useful resources to help grow your business.
             </Paragraph>
           </TextWrap>
           <Link href="/contact" passHref>

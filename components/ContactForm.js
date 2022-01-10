@@ -176,7 +176,7 @@ const ContactForm = () => {
 
   return (
     <ContactFromContainer>
-      <ContactFromHeading>Let's Transform Your Home!</ContactFromHeading>
+      <ContactFromHeading>Let&apos;s Transform Your Home!</ContactFromHeading>
       <ContactFromSubheading>
         We promise to respond within 48 hours.
       </ContactFromSubheading>
@@ -215,7 +215,7 @@ const ContactForm = () => {
         <ContactFormSubmit type="submit">Send Message</ContactFormSubmit>
         <ResultMessageWrap formSub={formSub}>
           <SuccessMessage successMessage={successMessage}>
-            Your form has been Submitted, we'll be in touch shortly!
+            Your form has been Submitted, we&apos;ll be in touch shortly!
           </SuccessMessage>
           <ErrorMessage errorMessage={errorMessage}>
             Sorry, Something went wrong!

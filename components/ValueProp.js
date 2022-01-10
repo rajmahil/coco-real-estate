@@ -80,8 +80,8 @@ const ValueProp = () => {
       <ValueWrap>
         <HeadingWrap>
           <SectionHeading>
-            Your website should work as hard as you. We'll build a website that
-            helps <RedTextSpan>grow your business</RedTextSpan>.
+            Your website should work as hard as you. We&apos;ll build a website
+            that helps <RedTextSpan>grow your business</RedTextSpan>.
           </SectionHeading>
         </HeadingWrap>
         <ValueContentWrap>
@@ -97,9 +97,9 @@ const ValueProp = () => {
                 </ValueHeading>
                 <Paragraph>
                   Since the majority of your leads come from referrals,
-                  credibility and trust are crucial. We'll build a website that
-                  reflects your dedication and work ethic, creating a strong
-                  lasting impression.
+                  credibility and trust are crucial. We&apos;ll build a website
+                  that reflects your dedication and work ethic, creating a
+                  strong lasting impression.
                 </Paragraph>
               </TextGrid>
               <TextGrid>
@@ -109,9 +109,9 @@ const ValueProp = () => {
                 </ValueHeading>
                 <Paragraph>
                   Since the majority of your leads come from referrals,
-                  credibility and trust are crucial. We'll build a website that
-                  reflects your dedication and work ethic, creating a strong
-                  lasting impression.
+                  credibility and trust are crucial. We&apos;ll build a website
+                  that reflects your dedication and work ethic, creating a
+                  strong lasting impression.
                 </Paragraph>
               </TextGrid>
               <TextGrid style={{ borderBottom: "none" }}>
@@ -119,9 +119,9 @@ const ValueProp = () => {
                 <ValueHeading>Engage and grow your audience</ValueHeading>
                 <Paragraph>
                   Since the majority of your leads come from referrals,
-                  credibility and trust are crucial. We'll build a website that
-                  reflects your dedication and work ethic, creating a strong
-                  lasting impression.
+                  credibility and trust are crucial. We&apos;ll build a website
+                  that reflects your dedication and work ethic, creating a
+                  strong lasting impression.
                 </Paragraph>
               </TextGrid>
             </TextWrap>
