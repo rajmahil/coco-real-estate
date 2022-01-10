@@ -121,7 +121,7 @@ const ValueProp = () => {
                   Since the majority of your leads come from referrals,
                   credibility and trust are crucial. We&apos;ll build a website
                   that reflects your dedication and work ethic, creating a
-                  strong lasting impression.
+                  strong lasting impressions.
                 </Paragraph>
               </TextGrid>
             </TextWrap>
