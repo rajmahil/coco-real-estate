@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import Image from "next/image";
-import cocoCreativeLogo from "../public/Images/cocoCreativeLogo.png";
+import cocoCreativeLogo from "../public/Images/CocoCreativeLogo.png";
 import { useState, useEffect } from "react";
 
 const FooterContainer = styled.footer`
