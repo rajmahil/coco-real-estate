@@ -1,4 +1,4 @@
-import Layout from "../Components/Layout";
+import Layout from "../components/Layout";
 import "../styles/globals.css";
 import Head from "next/head";
 import { useState } from "react";
