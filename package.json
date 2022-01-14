@@ -9,7 +9,9 @@
   },
   "dependencies": {
     "@material-ui/core": "^4.12.3",
+    "@mui/material": "^5.2.8",
     "emailjs-com": "^3.2.0",
+    "firebase": "^9.6.2",
     "framer-motion": "^5.5.5",
     "next": "^12.0.8-canary.15",
     "react": "17.0.2",

@@ -15,6 +15,8 @@ const TestContainer = styled.div`
 const TestWrap = styled.div`
   width: auto;
   display: flex;
+  flex-direction: column;
+  align-items: center;
   max-width: 1400px;
   margin-left: auto;
   margin-right: auto;
@@ -23,38 +25,14 @@ const TestWrap = styled.div`
     flex-direction: column;
   }
 `;
-const TestColImage = styled.div`
-  width: 55%;
-  padding-right: 45px;
-
-  @media screen and (max-width: 975px) {
-    width: 100%;
-    padding: 0px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    max-width: 600px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-`;
-const TestColText = styled.div`
-  width: 45%;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: center;
-
-  @media screen and (max-width: 975px) {
-    width: 100%;
-    padding-top: 24px;
-  }
-`;
 const TextWrap = styled.div`
   width: auto;
-  max-width: 500px;
   margin-left: auto;
   margin-right: auto;
+  max-width: 700px;
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
 `;
 const ClientContentWrap = styled.div`
   width: auto;
@@ -84,48 +62,34 @@ const Testimonials = () => {
   return (
     <TestContainer>
       <TestWrap>
-        <TestColImage>
-          <Image src={SampleTestImage} />
-        </TestColImage>
-        <TestColText>
-          <TextWrap>
-            <SectionHeading>
-              Our clients <RedTextSpan>trust us</RedTextSpan>.
-            </SectionHeading>
-            <Paragraph>
-              Coco Creative took the time to listen to the direction I wanted to
-              go with my website, and put it into action. They always responded
-              to my questions quickly, and we were able to get my new website up
-              and running within the timeline we set out to keep.
-            </Paragraph>
-            <ClientContentWrap>
-              <ClientImageWrap>
-                <Image src={ClientTestImage} />
-              </ClientImageWrap>
-              <ClientTextWrap>
-                <ClientName>Patrick Schwinghammer</ClientName>
-                <Paragraph
-                  style={{
-                    margin: "0px",
-                    fontSize: "0.9em",
-                    lineHeight: "22px",
-                  }}
-                >
-                  Schwinghammer Construction
-                </Paragraph>
-                <Paragraph
-                  style={{
-                    margin: "0px",
-                    fontSize: "0.9em",
-                    lineHeight: "22px",
-                  }}
-                >
-                  Owner/Operator
-                </Paragraph>
-              </ClientTextWrap>
-            </ClientContentWrap>
-          </TextWrap>
-        </TestColText>
+        <SectionHeading>
+          Our clients <RedTextSpan>trust us</RedTextSpan>.
+        </SectionHeading>
+        <TextWrap>
+          <Paragraph style={{ textAlign: "center" }}>
+            Coco Creative took the time to listen to the direction I wanted to
+            go with my website, and put it into action. They always responded to
+            my questions quickly, and we were able to get my new website up and
+            running within the timeline we set out to keep.
+          </Paragraph>
+          <ClientContentWrap>
+            <ClientImageWrap>
+              <Image src={ClientTestImage} />
+            </ClientImageWrap>
+            <ClientTextWrap>
+              <ClientName>Patrick Schwinghammer</ClientName>
+              <Paragraph
+                style={{
+                  margin: "0px",
+                  fontSize: "0.9em",
+                  lineHeight: "22px",
+                }}
+              >
+                Saskatoon, Saskatchewan
+              </Paragraph>
+            </ClientTextWrap>
+          </ClientContentWrap>
+        </TextWrap>
       </TestWrap>
     </TestContainer>
   );

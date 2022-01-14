@@ -25,6 +25,10 @@ const ContactFromSubheading = styled.p`
   margin: 0px;
   color: #333333;
   margin-bottom: 24px;
+  max-width: 450px;
+  text-align: center;
+  line-height: 22px;
+  font-size: 0.9em;
 
   @media screen and (max-width: 600px) {
     margin-bottom: 18px;
@@ -163,7 +167,12 @@ const ContactForm = () => {
     e.preventDefault();
 
     emailjs
-      .sendForm("service", "template", e.target, "user")
+      .sendForm(
+        "service_924otss",
+        "template_ydplxei",
+        e.target,
+        "user_x2vOJw9dQBquXNZHnAmrG"
+      )
       .then((res) => {
         console.log(res);
         setSuccessMessage(true);
@@ -178,9 +187,10 @@ const ContactForm = () => {
 
   return (
     <ContactFromContainer>
-      <ContactFromHeading>Let&apos;s Transform Your Home!</ContactFromHeading>
+      <ContactFromHeading>Book a Strategy Call</ContactFromHeading>
       <ContactFromSubheading>
-        We promise to respond within 48 hours.
+        Fill out the form below to schedule your free no-obligation strategy
+        call. We promise to respond within 24 hours.
       </ContactFromSubheading>
       <ContactFormWrap onSubmit={sendEmail}>
         <ContactFromInput

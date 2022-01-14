@@ -65,11 +65,13 @@ const Navbar = ({ isOpen, toggle }) => {
     <NavbarContainer scrollPosition={scrollPosition}>
       <NavbarWrap>
         <Link href="/" passhref>
-          {scrollPosition < 100 ? (
-            <Image src={CocoCreativeMainLogo} width={222} height={74.37} />
-          ) : (
-            <Image src={CocoCreativeMainLogo} width={177.6} height={59.5} />
-          )}
+          <div style={{ cursor: "pointer" }}>
+            {scrollPosition < 100 ? (
+              <Image src={CocoCreativeMainLogo} width={222} height={74.37} />
+            ) : (
+              <Image src={CocoCreativeMainLogo} width={177.6} height={59.5} />
+            )}
+          </div>
         </Link>
         <NavLinksWrap>
           <div onClick={toggle}>

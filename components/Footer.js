@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import Image from "next/image";
+import Link from "next/link";
 import cocoCreativeLogo from "../public/Images/CocoCreativeLogo.png";
 import { useState, useEffect } from "react";
 
@@ -85,7 +86,7 @@ const CopyrightText = styled.text`
 const FooterLinks = styled.text`
   color: #fff;
   opacity: 0.5;
-  padding: 30px 0px;
+  padding: 20px 0px;
   cursor: pointer;
   transition: all 0.3s ease-out;
 
@@ -122,23 +123,27 @@ const Footer = () => {
         <FooterColLinks>
           <FooterCols>
             <FooterHeading>Quick Links</FooterHeading>
-            <FooterLinks>About Us</FooterLinks>
-            <FooterLinks>About Us</FooterLinks>
-            <FooterLinks>About Us</FooterLinks>
-            <FooterLinks>About Us</FooterLinks>
-            <FooterLinks>About Us</FooterLinks>
+            <Link href="/" passHref>
+              <FooterLinks>Home</FooterLinks>
+            </Link>
+            <Link href="/contact" passHref>
+              <FooterLinks>Book a Strategy Call</FooterLinks>
+            </Link>
+            <FooterLinks>Privacy Policy</FooterLinks>
           </FooterCols>
           <FooterCols>
             <FooterHeading>Follow Us</FooterHeading>
-            <FooterLinks>About Us</FooterLinks>
-            <FooterLinks>About Us</FooterLinks>
-            <FooterLinks>About Us</FooterLinks>
+            <FooterLinks>Facebook</FooterLinks>
+            <FooterLinks>Instagram</FooterLinks>
           </FooterCols>
           <FooterCols>
             <FooterHeading>Contact Us</FooterHeading>
-            <FooterLinks>About Us</FooterLinks>
-            <FooterLinks>About Us</FooterLinks>
-            <FooterLinks>About Us</FooterLinks>
+            <Link href="mailto:info@cococreativeweb.com" passHref>
+              <FooterLinks>Em: info@cococreativeweb.com</FooterLinks>
+            </Link>
+            <Link href="tel:306-716-3130" passHref>
+              <FooterLinks>Ph: 306-716-3130</FooterLinks>
+            </Link>
           </FooterCols>
         </FooterColLinks>
       </FooterWrap>

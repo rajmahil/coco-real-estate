@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { useState } from "react";
 import styled from "styled-components";
 import HeroImage from "../public/Images/HeroImage.jpg";
 import {
@@ -53,34 +54,48 @@ const TextWrap = styled.div`
 `;
 const MainHeading = styled.h1`
   width: auto;
-  line-height: 50px;
-  font-size: 2.6em;
+  line-height: 60px;
+  font-size: 3em;
   font-weight: 800;
   margin: 0px;
 
   @media screen and (max-width: 500px) {
     font-size: 2.2em;
+    line-height: 50px;
   }
 `;
 
 const Hero = () => {
+  const heroWords = ["agents", "teams", "brokers"];
+  const [heroWord, setHeroWord] = useState(0);
+
+  const switchSlide = () => {
+    if (heroWord === 2) {
+      setHeroWord(0);
+    } else {
+      setHeroWord(heroWord + 1);
+    }
+  };
+
+  setTimeout(switchSlide, 3000);
+
   return (
     <HeroContainer>
       <HeroColumnText>
         <TextWrap>
           <MainHeading>
-            Real Esatate Web-design, make more{" "}
-            <RedTextSpan>money brother</RedTextSpan>.
+            We help real estate
+            <br /> <RedTextSpan>{heroWords[heroWord]}</RedTextSpan> prosper
+            online.
           </MainHeading>
           <Paragraph passHref style={{ marginBottom: "28px" }}>
-            We build stunning websites that boost revenue and generate qualified
-            leads for <ParaTextSpan>construction businesses. </ParaTextSpan>
-            Schedule your free{" "}
-            <ParaTextSpan> no-obligation strategy</ParaTextSpan> call to get
-            started.
+            Stand above the competition and cut through the noise with stunning
+            real estate webdesign and best-in-class digital marketing. Schedule
+            your <ParaTextSpan>free no-obligation strategy call</ParaTextSpan>{" "}
+            to get started.
           </Paragraph>
           <Link href="/contact" passHref>
-            <GlobalButton>Contact Us</GlobalButton>
+            <GlobalButton>Book a Strategy Call</GlobalButton>
           </Link>
         </TextWrap>
       </HeroColumnText>

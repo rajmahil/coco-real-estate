@@ -92,7 +92,10 @@ const SponsorsBanner = () => {
     <BannerContainer>
       <BannerWrap>
         <GridWrap>
-          <SponsorsText>Trusted by industry professionals:</SponsorsText>
+          <SponsorsText>
+            Trusted by
+            <br /> professionals:
+          </SponsorsText>
           <StarWrap>
             <AiFillStar />
             <AiFillStar />
@@ -110,7 +113,7 @@ const SponsorsBanner = () => {
         </GridWrap>
         <GridWrap>
           <ImageWrap
-            style={{ width: `${windowDimensions < 600 ? "60%" : "45%"}` }}
+            style={{ width: `${windowDimensions < 600 ? "80%" : "80%"}` }}
           >
             <Image src={canary} />
           </ImageWrap>

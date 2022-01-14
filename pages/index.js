@@ -9,6 +9,7 @@ import Testimonials from "../components/Testimonials";
 import MainCallToAction from "../components/MainCallToAction";
 import Contact from "../components/Contact";
 import { useState } from "react";
+import FeaturedProject from "../components/FeaturedProject";
 
 export default function Home({ toggle }) {
   return (
@@ -18,6 +19,7 @@ export default function Home({ toggle }) {
       <About />
       <About isTwo={true} />
       <ValueProp />
+      <FeaturedProject />
       <StatsBar />
       <Testimonials />
       <MainCallToAction />
