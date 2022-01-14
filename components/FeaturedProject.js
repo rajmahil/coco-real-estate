@@ -146,8 +146,9 @@ const FeaturedProject = () => {
             </IconWrap>
             <FeaturesHeading>Sales-Driving Features</FeaturesHeading>
             <FeaturesPara>
-              Your marketing efforts are a direct reflection of how you'll
-              market your client's home. Show them you're the best in the biz.
+              Your marketing efforts are a direct reflection of how you&apos;ll
+              market your client&apos;s home. Show them you&apos;re the best in
+              the biz.
             </FeaturesPara>
           </FeaturesCol>
           <FeaturesCol>
@@ -156,18 +157,20 @@ const FeaturedProject = () => {
             </IconWrap>
             <FeaturesHeading>Fully Responsive</FeaturesHeading>
             <FeaturesPara>
-              Your marketing efforts are a direct reflection of how you'll
-              market your client's home. Show them you're the best in the biz.
+              Your marketing efforts are a direct reflection of how you&apos;ll
+              market your client&apos;s home. Show them you&apos;re the best in
+              the biz.
             </FeaturesPara>
           </FeaturesCol>
           <FeaturesCol>
             <IconWrap>
               <BsClipboardData />
             </IconWrap>
-            <FeaturesHeading>Listings & IDX</FeaturesHeading>
+            <FeaturesHeading>Listings and IDX</FeaturesHeading>
             <FeaturesPara>
-              Your marketing efforts are a direct reflection of how you'll
-              market your client's home. Show them you're the best in the biz.
+              Your marketing efforts are a direct reflection of how you&apos;ll
+              market your client&apos;s home. Show them you&apos;re the best in
+              the biz.
             </FeaturesPara>
           </FeaturesCol>
           <FeaturesCol>
@@ -176,8 +179,9 @@ const FeaturedProject = () => {
             </IconWrap>
             <FeaturesHeading>Memorable Design</FeaturesHeading>
             <FeaturesPara>
-              Your marketing efforts are a direct reflection of how you'll
-              market your client's home. Show them you're the best in the biz.
+              Your marketing efforts are a direct reflection of how you&apos;ll
+              market your client&apos;s home. Show them you&apos;re the best in
+              the biz.
             </FeaturesPara>
           </FeaturesCol>
         </FeaturesWrap>

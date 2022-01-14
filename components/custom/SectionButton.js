@@ -56,6 +56,7 @@ const SectionButton = ({ innerHTML, Href, isWhite }) => {
     <a
       href={Href}
       target="_blank"
+      rel="noreferrer"
       style={{ textDecoration: "none !important" }}
     >
       <SecButtonContainer
