@@ -74,7 +74,7 @@ const ProjectDetails = ({ project }) => {
         />
         <PhotoWrap>
           {project.projectImages.map((image) => (
-            <ProjectImage src={image.url} />
+            <ProjectImage src={image.url} key={image.id} />
           ))}
         </PhotoWrap>
         <ViewAllProjects />

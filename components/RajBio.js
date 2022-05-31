@@ -97,7 +97,8 @@ const RajBio = () => {
             business owners realize the importance of digital presence but are
             unable to take the necessary action. With many different digital
             marketing options, business owners are constantly bombarded. They
-            often don't know who to trust, what to do, or where to start. <br />
+            often don&apos;t know who to trust, what to do, or where to start.{" "}
+            <br />
             <br /> At Coco Creative,
             <ParaTextSpan>
               {" "}

@@ -51,8 +51,8 @@ const FeaturedProject = ({ projects }) => {
       <FeaturedWrap>
         <TextWrap>
           <SectionHeading style={{ textAlign: "left" }}>
-            We've helped many business owners build effective websites. Here are
-            some <RedTextSpan>recent projects</RedTextSpan>.
+            We&apos;ve helped many business owners build effective websites.
+            Here are some <RedTextSpan>recent projects</RedTextSpan>.
           </SectionHeading>
         </TextWrap>
         <ProjectsWrap>

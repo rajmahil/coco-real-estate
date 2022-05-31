@@ -180,7 +180,7 @@ const About = ({ isTwo }) => {
                     >
                       100% satisfied with our serivces.
                     </ExternalLink>{" "}
-                    Whether it's a minor website update or a fully-custom
+                    Whether it&apos;s a minor website update or a fully-custom
                     ecommerce website, our excellent customer service is
                     consistent.
                   </Paragraph>
@@ -277,8 +277,8 @@ const About = ({ isTwo }) => {
                       </InternalLink>
                     </Link>
                     experts have helped many local Saskatoon business achieve
-                    top rankings on Google. Coco Creative's SEO packages are
-                    affordable and effective, helping your business shine
+                    top rankings on Google. Coco Creative&apos;s SEO packages
+                    are affordable and effective, helping your business shine
                     amongst the noise.
                   </Paragraph>
                 </ColumnRight>

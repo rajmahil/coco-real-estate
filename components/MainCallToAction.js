@@ -53,7 +53,7 @@ const MainCallToAction = () => {
             </Paragraph>
           </TextWrap>
           <Link href="/contact" passHref>
-            <SecGlobalButton>Let's Get in Touch!</SecGlobalButton>
+            <SecGlobalButton>Let&apos;s Get in Touch!</SecGlobalButton>
           </Link>
         </CtaContentWrap>
       </CtaWrap>

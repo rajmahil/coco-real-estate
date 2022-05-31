@@ -193,8 +193,9 @@ const Services = () => {
                 </SectionThreeHeading>
                 <Paragraph>
                   Your website is the primary tool to convert curious visitors
-                  into potential clients. We'll build a modern mobile-friendly
-                  website, professionally designed and developed by our experts.
+                  into potential clients. We&apos;ll build a modern
+                  mobile-friendly website, professionally designed and developed
+                  by our experts.
                 </Paragraph>
               </CardsWrap>
               <CardsWrap>
@@ -247,12 +248,12 @@ const Services = () => {
                 Introduction
               </SectionThreeHeading>
               <Paragraph>
-                Before we get started, it's crucial to set goals on what you'd
-                like to achieve. Our initial meeting will help us determine your
-                expectations, allowing us to craft a methodical approach to
-                ensure success. In the initial meeting, We'll briefly analyze
-                your current digital marketing infrastructure and create unique
-                benchmarks to measure your success from.
+                Before we get started, it&apos;s crucial to set goals on what
+                you&apos;d like to achieve. Our initial meeting will help us
+                determine your expectations, allowing us to craft a methodical
+                approach to ensure success. In the initial meeting, We&apos;ll
+                briefly analyze your current digital marketing infrastructure
+                and create unique benchmarks to measure your success from.
               </Paragraph>
             </ProcessColLeft>
             <ProcessColRight>
@@ -289,11 +290,12 @@ const Services = () => {
                 Implementation
               </SectionThreeHeading>
               <Paragraph>
-                Once the strategy is finalized, We'll put the plan into action.
-                Communication is key, we'll provide regular updates on the
-                progress of your project. Our experienced staff will ensure the
-                project is successful. We'll continue to strive for improvements
-                until the client is fully satisfied with our work.
+                Once the strategy is finalized, We&apos;ll put the plan into
+                action. Communication is key, we&apos;ll provide regular updates
+                on the progress of your project. Our experienced staff will
+                ensure the project is successful. We&apos;ll continue to strive
+                for improvements until the client is fully satisfied with our
+                work.
               </Paragraph>
             </ProcessColLeft>
             <ProcessColRight>

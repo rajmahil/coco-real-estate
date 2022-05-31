@@ -102,7 +102,10 @@ const About = () => {
           </SectionHeading>
           <ColContainer>
             <Col65>
-              <Image src={ValuePropImage} />
+              <Image
+                src={ValuePropImage}
+                alt="custom website design in Saskatoon, Saskatchewan - Coco Creative"
+              />
             </Col65>
             <Col35>
               <CardsWrap>
@@ -114,8 +117,9 @@ const About = () => {
                 </SectionThreeHeading>
                 <Paragraph style={{ color: "#fff" }}>
                   Your website is the primary tool to convert curious visitors
-                  into potential clients. We'll build a modern mobile-friendly
-                  website, professionally designed and developed by our experts.
+                  into potential clients. We&apos;ll build a modern
+                  mobile-friendly website, professionally designed and developed
+                  by our experts.
                 </Paragraph>
               </CardsWrap>
               <CardsWrap>
@@ -153,7 +157,7 @@ const About = () => {
         <SectionHeading
           style={{ maxWidth: "628px", textAlign: "center", marginLeft: "auto" }}
         >
-          We've helped many business achieve{" "}
+          We&apos;ve helped many business achieve{" "}
           <RedTextSpan>exceptional result</RedTextSpan>. Below are a few honest
           testimonials.
         </SectionHeading>

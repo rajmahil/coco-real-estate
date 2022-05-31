@@ -48,10 +48,10 @@ const ProjectHeader = ({ heading, tags, projectLink }) => {
         </SectionHeading>
         <TagsWrap style={{ alignItems: "center", justifyContent: "center" }}>
           {tags.map((tag) => (
-            <ProjectTag>{tag.projectTag}</ProjectTag>
+            <ProjectTag key={tag.id}>{tag.projectTag}</ProjectTag>
           ))}
         </TagsWrap>
-        <a passHref href={projectLink} target="_blank">
+        <a passHref href={projectLink} target="_blank" rel="noreferrer">
           <GlobalButton>View Website</GlobalButton>
         </a>
       </ContentWrap>
