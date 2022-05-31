@@ -72,7 +72,7 @@ const ProjectDetails = ({ project }) => {
         <PhotoWrap>
           {!project
             ? "...loading"
-            : project?.projectImages?.map((image) => (
+            : project.projectImages.map((image) => (
                 <ProjectImage src={image?.url} key={image?.id} />
               ))}
         </PhotoWrap>
