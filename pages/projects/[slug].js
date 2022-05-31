@@ -56,8 +56,10 @@ const ProjectImage = styled.img`
 
 const ProjectDetails = ({ project }) => {
   const md = new MarkdownIt({
-    html: false,
+    html: true,
   });
+  var result = md.render(project?.projectLongDescription);
+
   console.log(project);
   return (
     <>
@@ -69,7 +71,7 @@ const ProjectDetails = ({ project }) => {
       <PageWrap>
         <LongDescription
           dangerouslySetInnerHTML={{
-            __html: md.render(project?.projectLongDescription),
+            __html: result,
           }}
         />
         <PhotoWrap>
