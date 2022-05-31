@@ -147,7 +147,7 @@ const Services = () => {
                 <ValueHeading>Consulting</ValueHeading>
                 <Paragraph style={{ color: "#fff", marginTop: "5px" }}>
                   Our web design and development consulting services provide the
-                  neccessary advise for clients in{" "}
+                  necessary advice for clients in{" "}
                   <ExternalLink
                     href="https://www.saskatoon.ca/"
                     target="_blank"
@@ -155,10 +155,10 @@ const Services = () => {
                   >
                     Saskatoon
                   </ExternalLink>{" "}
-                  . Whether its about custom Wordpress websites, reliable web
-                  hosting or affordable web design, our experts will help you
-                  make the right moves. Working closly with our experts, we will
-                  develop a strategy for success.
+                  . Whether it is about custom WordPress websites, reliable web
+                  hosting, or affordable web design, our experts will help you
+                  make the right moves. Working closely with our experts, we
+                  will develop a strategy for success.
                 </Paragraph>
               </TextGrid>
             </TextWrap>

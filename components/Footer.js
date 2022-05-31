@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import cocoCreativeLogo from "../public/Images/CocoCreativeLogo.png";
 import { useState, useEffect } from "react";
+import { Paragraph } from "../styles/global";
 
 const FooterContainer = styled.footer`
   width: auto;
@@ -67,7 +68,7 @@ const FooterHeading = styled.h3`
   margin-top: 0px;
 `;
 const ImageWrap = styled.div`
-  width: 225px;
+  width: 275px;
 `;
 const CopyrightWrap = styled.div`
   width: auto;
@@ -114,11 +115,11 @@ const Footer = () => {
       <FooterWrap>
         <FooterColLogo>
           <ImageWrap>
-            <Image src={cocoCreativeLogo} />
+            <Image
+              src={cocoCreativeLogo}
+              alt="Coco Creative logo - custom website design Saskatoon"
+            />
           </ImageWrap>
-          <FooterDescription>
-            We build websites for construction businesses that generate results.
-          </FooterDescription>
         </FooterColLogo>
         <FooterColLinks>
           <FooterCols>
@@ -126,10 +127,18 @@ const Footer = () => {
             <Link href="/" passHref>
               <FooterLinks>Home</FooterLinks>
             </Link>
-            <Link href="/contact" passHref>
-              <FooterLinks>Book a Strategy Call</FooterLinks>
+            <Link href="/about" passHref>
+              <FooterLinks>About Us</FooterLinks>
             </Link>
-            <FooterLinks>Privacy Policy</FooterLinks>
+            <Link href="/portfolio" passHref>
+              <FooterLinks>Portfolio</FooterLinks>
+            </Link>
+            <Link href="/services" passHref>
+              <FooterLinks>Services</FooterLinks>
+            </Link>
+            <Link href="/contact" passHref>
+              <FooterLinks>Contact Us</FooterLinks>
+            </Link>
           </FooterCols>
           <FooterCols>
             <FooterHeading>Follow Us</FooterHeading>

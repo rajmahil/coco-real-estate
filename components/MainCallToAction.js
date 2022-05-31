@@ -47,13 +47,14 @@ const MainCallToAction = () => {
           <TextWrap>
             <SectionHeading>Ready to get started? </SectionHeading>
             <Paragraph style={{ color: "#fff", marginTop: "5px" }}>
-              We&apos;ll review your current website and offer solutions to
-              improve your online presence. It&apos;s free and we&apos;ll leave
-              you with useful resources to help grow your business.
+              Let&apos;s discuss your project. We promise to respond within 24
+              hours!
             </Paragraph>
           </TextWrap>
           <Link href="/contact" passHref>
-            <SecGlobalButton>Let&apos;s Get in Touch!</SecGlobalButton>
+            <SecGlobalButton white={true}>
+              Let&apos;s Get in Touch!
+            </SecGlobalButton>
           </Link>
         </CtaContentWrap>
       </CtaWrap>

@@ -55,6 +55,9 @@ const ProjectImage = styled.img`
 `;
 
 const ProjectDetails = ({ project }) => {
+  const md = new MarkdownIt({
+    html: true,
+  });
   console.log(project);
   return (
     <>
@@ -64,7 +67,11 @@ const ProjectDetails = ({ project }) => {
         projectLink={project?.projectLink}
       />
       <PageWrap>
-        <LongDescription>{project?.projectLongDescription}</LongDescription>
+        <LongDescription
+          dangerouslySetInnerHTML={{
+            __html: md.render(project?.projectLongDescription),
+          }}
+        />
         <PhotoWrap>
           {!project
             ? "...loading"
