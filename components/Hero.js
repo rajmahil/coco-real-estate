@@ -1,12 +1,14 @@
 import Link from "next/link";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import styled from "styled-components";
-import HeroImage from "../public/Images/HeroImage.jpg";
+import heroVidOverlay from "../public/Images/heroVidOverlay.png";
+
 import {
   GlobalButton,
   Paragraph,
   ParaTextSpan,
   RedTextSpan,
+  SecGlobalButton,
 } from "../styles/global";
 
 const HeroContainer = styled.div`
@@ -19,12 +21,11 @@ const HeroContainer = styled.div`
     height: auto;
   }
 `;
-const HeroColumnImage = styled.div`
-  width: 50%;
+const HeroVideoCol = styled.div`
+  width: 45%;
   height: 100%;
-  background: url(${HeroImage.src});
-  background-size: cover;
-  background-position: center;
+  overflow: hidden;
+  position: relative;
 
   @media screen and (max-width: 1000px) {
     width: 100%;
@@ -32,7 +33,7 @@ const HeroColumnImage = styled.div`
   }
 `;
 const HeroColumnText = styled.div`
-  width: 50%;
+  width: 55%;
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -47,7 +48,7 @@ const HeroColumnText = styled.div`
 `;
 const TextWrap = styled.div`
   width: auto;
-  max-width: 600px;
+  max-width: 720px;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -60,46 +61,88 @@ const MainHeading = styled.h1`
   margin: 0px;
 
   @media screen and (max-width: 500px) {
-    font-size: 2.2em;
+    font-size: 2em;
     line-height: 50px;
   }
 `;
 
-const Hero = () => {
-  const heroWords = ["agents", "teams", "brokers"];
-  const [heroWord, setHeroWord] = useState(0);
+const HeroVideo = styled.video`
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+`;
 
-  const switchSlide = () => {
-    if (heroWord === 2) {
-      setHeroWord(0);
-    } else {
-      setHeroWord(heroWord + 1);
-    }
+const HeroVidOverlay = styled.div`
+  background-image: url(${(props) => props.image.src});
+  z-index: 10;
+  width: 100%;
+  height: 88vh;
+  position: absolute;
+`;
+
+const ButtonWrap = styled.div`
+  display: flex;
+  align-items: center;
+`;
+
+const Hero = () => {
+  const [currentWord, setCurrentWord] = useState(0);
+  const HeroWords = [
+    "affordable",
+    "attractive",
+    "results-oriented",
+    "mobile-responsive",
+  ];
+
+  const NextWord = () => {
+    currentWord === HeroWords.length - 1
+      ? setCurrentWord(0)
+      : setCurrentWord(currentWord + 1);
   };
 
-  setTimeout(switchSlide, 3000);
-
+  useEffect(() => {
+    const interval = setInterval(() => {
+      NextWord();
+    }, 2000);
+    return () => clearInterval(interval);
+  });
   return (
     <HeroContainer>
       <HeroColumnText>
         <TextWrap>
           <MainHeading>
-            We help real estate
-            <br /> <RedTextSpan>{heroWords[heroWord]}</RedTextSpan> prosper
-            online.
+            Grow your business with{" "}
+            <RedTextSpan>{HeroWords[currentWord]}</RedTextSpan> web design.
           </MainHeading>
-          <Paragraph passHref style={{ marginBottom: "28px" }}>
-            Stand above the competition and cut through the noise with stunning
-            real estate webdesign and best-in-class digital marketing. Schedule
-            your <ParaTextSpan>free no-obligation strategy call</ParaTextSpan>{" "}
-            to get started.
+          <Paragraph
+            passHref
+            style={{ marginBottom: "28px", maxWidth: "600px" }}
+          >
+            Coco Creative is a modern web design agency located in Saskatoon,
+            SK. We build stunning custom websites that boost revenue by
+            generating quality leads, helping you stand above the competition.{" "}
+            <ParaTextSpan>Ready to grow your business?</ParaTextSpan>
           </Paragraph>
-          <Link href="/contact" passHref>
-            <GlobalButton>Book a Strategy Call</GlobalButton>
-          </Link>
+          <ButtonWrap>
+            <Link href="/contact" passHref>
+              <GlobalButton>Get A Quote</GlobalButton>
+            </Link>
+            <Link href="/projects" passHref>
+              <SecGlobalButton>View Portfolio</SecGlobalButton>
+            </Link>
+          </ButtonWrap>
         </TextWrap>
       </HeroColumnText>
-      <HeroColumnImage />
+      <HeroVideoCol>
+        <HeroVidOverlay image={heroVidOverlay}></HeroVidOverlay>
+        <HeroVideo loop autoPlay muted>
+          <source
+            src="https://res.cloudinary.com/dkmlwbskl/video/upload/v1653597789/heroVideo_ekqtwg.mp4"
+            type="video/mp4"
+          />
+        </HeroVideo>
+      </HeroVideoCol>
     </HeroContainer>
   );
 };

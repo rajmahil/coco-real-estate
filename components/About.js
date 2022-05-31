@@ -1,10 +1,21 @@
 import styled from "styled-components";
 import AboutBgPattern from "../public/Images/AboutBgPattern.png";
 import AboutBgPatternTwo from "../public/Images/AboutBgPatternTwo.png";
-import SolutionImage from "../public/Images/SolutionImage.png";
-import YKTSImage from "../public/Images/YKTSImage.png";
+import SolutionImage from "../public/Images/custom-web-desing-saskatoon-coco-creative.png";
+import YKTSImage from "../public/Images/Custom-Wordpress-and-Ecommerce-websites-Saskatoon.png";
 import Image from "next/image";
+import Link from "next/link";
 import {
+  FaPalette,
+  FaChartArea,
+  FaDatabase,
+  FaHandsHelping,
+  FaBolt,
+  FaSearchDollar,
+} from "react-icons/fa";
+import {
+  ExternalLink,
+  InternalLink,
   Paragraph,
   ParaTextSpan,
   RedTextSpan,
@@ -81,45 +92,222 @@ const ImageWrap = styled.div`
   }
 `;
 
+const ContentContainer = styled.div`
+  width: auto;
+  display: flex;
+  margin-top: 24px;
+
+  @media screen and (max-width: 550px) {
+    flex-direction: column;
+  }
+`;
+
+const ColumnLeft = styled.div`
+  width: 12%;
+
+  @media screen and (max-width: 550px) {
+    width: 100%;
+  }
+`;
+
+const ColumnRight = styled.div`
+  width: 88%;
+  padding-left: 10px;
+
+  @media screen and (max-width: 550px) {
+    padding-left: 0px;
+    width: 100%;
+  }
+`;
+
+const IconWrap = styled.div`
+  font-size: 3em;
+  color: #ce202f;
+  padding-top: 5px;
+
+  @media screen and (max-width: 550px) {
+    font-size: 2.8em;
+  }
+`;
+
+const ContentHeding = styled.h3`
+  font-size: 1.4em;
+  margin-top: 0px;
+  margin-bottom: 5px;
+`;
+
 const About = ({ isTwo }) => {
   return (
     <AboutContainer isTwo={isTwo}>
       <AboutWrap isTwo={isTwo}>
         <AboutColOne>
           <ImageWrap isTwo={isTwo}>
-            {isTwo ? <Image src={SolutionImage} /> : <Image src={YKTSImage} />}
+            {isTwo ? (
+              <Image
+                src={SolutionImage}
+                alt="custom web design Saskatoon Coco Creative"
+              />
+            ) : (
+              <Image
+                src={YKTSImage}
+                alt="Custom Wordpress and Ecommerce websites Saskatoon"
+              />
+            )}
           </ImageWrap>
         </AboutColOne>
-        <AboutColTwo>
-          <TextWrap>
-            <SectionHeading>
-              You know this <RedTextSpan>story</RedTextSpan> -
-            </SectionHeading>
-            <Paragraph>
-              You have an amazing vision for your construction business. The
-              only item missing is an attractive website. You search endlessly
-              for solutions and there are two obvious options that stand out.
-              First, you can attempt to develop your own website using
-              time-consuming and ineffective DIY website builders.
-              <ParaTextSpan>
-                Second, you can hire a generic web designer with zero industry
-                knowledge to build you a website.
-              </ParaTextSpan>{" "}
-              <br />
-              <br />
-              The designer uses a one-size-fits-all website template that
-              butchers your company image and fails to generate any significant
-              results. Both options lead to the same result.
-              <br />
-              <br /> An unattractive website that leaves a poor impression and
-              fails to bring you new clients.
-              <ParaTextSpan>
-                {" "}
-                So why pay for something that doesn’t work?
-              </ParaTextSpan>
-            </Paragraph>
-          </TextWrap>
-        </AboutColTwo>
+        {isTwo ? (
+          <AboutColTwo>
+            <TextWrap>
+              <SectionHeading>
+                Why Choose <RedTextSpan>Coco Creative</RedTextSpan> ?
+              </SectionHeading>
+              <ContentContainer>
+                <ColumnLeft>
+                  <IconWrap>
+                    <FaHandsHelping />
+                  </IconWrap>
+                </ColumnLeft>
+                <ColumnRight>
+                  <ContentHeding>Strong Client Relationships</ContentHeding>
+                  <Paragraph style={{ marginTop: "5px" }}>
+                    At Coco Creative, you are more than just another client. We
+                    believe in a personalized approach to business. Our goal is
+                    to build long lasting relationship for years to come, Raj
+                    and the team will ensure you are{" "}
+                    <ExternalLink
+                      href="https://www.google.com/search?q=coco+creative+testimonials&client=firefox-b-d&sxsrf=ALiCzsbgxBucg_MUOCmqqHqyzryXAIQ3Cg%3A1653956776702&ei=qGCVYtCtKuO5uvQPraGKgA8&ved=0ahUKEwjQoZiRvYj4AhXjnI4IHa2QAvAQ4dUDCA0&uact=5&oq=coco+creative+testimonials&gs_lcp=Cgdnd3Mtd2l6EAMyBQghEKABMgUIIRCgAToECAAQRzoECCMQJzoFCAAQkQI6EQguEIAEELEDEIMBEMcBEKMCOgsIABCABBCxAxCDAToRCC4QgAQQsQMQgwEQxwEQ0QM6DgguEIAEELEDEMcBEKMCOgQIABBDOgUIABCABDoLCC4QxwEQrwEQkQI6BwgAELEDEEM6BAguEEM6BwguENQCEEM6CggAELEDEIMBEEM6CAgAEIAEELEDOgsILhCABBDHARCvAToICC4QgAQQsQM6CwguEIAEELEDEIMBOgoILhCxAxCDARBDOgoILhCxAxDUAhBDOg4IABCABBCxAxCDARDJAzoFCAAQkgM6BQguEIAEOgsILhCABBCxAxDUAjoFCAAQsQM6BAgAEAo6BwgAEIAEEAo6CAgAEB4QDRAFOgYIABAeEBY6CAgAEB4QFhAKOggIABCABBDJAzoECCEQFToHCCEQChCgAUoECEEYAEoECEYYAFDFA1j8MWDWMmgJcAJ4AIABjwGIAewekgEEMC4zMpgBAKABAcgBCMABAQ&sclient=gws-wiz#lrd=0x5304f7dbffb27f7b:0xfbf01319eafa5de6,1,,,"
+                      target="_blank"
+                    >
+                      100% satisfied with our serivces.
+                    </ExternalLink>{" "}
+                    Whether it's a minor website update or a fully-custom
+                    ecommerce website, our excellent customer service is
+                    consistent.
+                  </Paragraph>
+                </ColumnRight>
+              </ContentContainer>
+              <ContentContainer>
+                <ColumnLeft>
+                  <IconWrap>
+                    <FaBolt />
+                  </IconWrap>
+                </ColumnLeft>
+                <ColumnRight>
+                  <ContentHeding>Exceptional Responsiveness</ContentHeding>
+                  <Paragraph style={{ marginTop: "5px" }}>
+                    Coco Creative promises excellent communication and
+                    authenticity, We will never leave you in the dark. Raj and
+                    the team are easily accessible when needed. Our word is our
+                    bond, we will ensure your needs are satisfied, and concerns
+                    resolved. Our 24/7 support ensures you recieve help when you
+                    need most.
+                  </Paragraph>
+                </ColumnRight>
+              </ContentContainer>
+              <ContentContainer>
+                <ColumnLeft>
+                  <IconWrap>
+                    <FaSearchDollar />
+                  </IconWrap>
+                </ColumnLeft>
+                <ColumnRight>
+                  <ContentHeding>
+                    High Quality, Affordable Pricing
+                  </ContentHeding>
+                  <Paragraph style={{ marginTop: "5px" }}>
+                    When it comes to effective modern web design, We realize not
+                    every business has hundreds and thousands of dollars to
+                    spend. Our affordable web design plans ensure you receive
+                    the necessary services without breaking the bank. Whether
+                    you are a public company or a local shop, We will work
+                    together to bring your ideas to life.
+                  </Paragraph>
+                </ColumnRight>
+              </ContentContainer>
+            </TextWrap>
+          </AboutColTwo>
+        ) : (
+          <AboutColTwo>
+            <TextWrap>
+              <SectionHeading>
+                Websites that <RedTextSpan>drive results</RedTextSpan>.
+              </SectionHeading>
+              <ContentContainer>
+                <ColumnLeft>
+                  <IconWrap>
+                    <FaPalette />
+                  </IconWrap>
+                </ColumnLeft>
+                <ColumnRight>
+                  <ContentHeding>
+                    Fully-Customized & Mobile-friendly
+                  </ContentHeding>
+                  <Paragraph style={{ marginTop: "5px" }}>
+                    Your website should be as unique as your business. Working
+                    with our custom website design experts, We will develop a
+                    website that represents and communicates the value of your
+                    business. Whether its a{" "}
+                    <ExternalLink
+                      href="https://wordpress.com/themes"
+                      target="_blank"
+                    >
+                      {" "}
+                      custom Wordpress theme
+                    </ExternalLink>
+                    , or an ecommerce website design, Coco Creative will build a
+                    fully-customized, mobile-friendly website that elevates your
+                    business.
+                  </Paragraph>
+                </ColumnRight>
+              </ContentContainer>
+              <ContentContainer>
+                <ColumnLeft>
+                  <IconWrap>
+                    <FaChartArea />
+                  </IconWrap>
+                </ColumnLeft>
+                <ColumnRight>
+                  <ContentHeding>Industry-Leading SEO</ContentHeding>
+                  <Paragraph style={{ marginTop: "5px" }}>
+                    Already have an optimized website but not getting enough
+                    traffic? Our{" "}
+                    <Link href="/services" passhref>
+                      <InternalLink>
+                        Search Engine Optimization (SEO)
+                      </InternalLink>
+                    </Link>
+                    experts have helped many local Saskatoon business achieve
+                    top rankings on Google. Coco Creative's SEO packages are
+                    affordable and effective, helping your business shine
+                    amongst the noise.
+                  </Paragraph>
+                </ColumnRight>
+              </ContentContainer>
+              <ContentContainer>
+                <ColumnLeft>
+                  <IconWrap>
+                    <FaDatabase />
+                  </IconWrap>
+                </ColumnLeft>
+                <ColumnRight>
+                  <ContentHeding>Reliable Web Hosting & Support</ContentHeding>
+                  <Paragraph style={{ marginTop: "5px" }}>
+                    We offer{" "}
+                    <Link href="/services" passHref>
+                      <InternalLink>top-notch hosting services </InternalLink>
+                    </Link>
+                    and support to keep your website running efficiently. From
+                    domain registration to Wordpress hosting services, Coco
+                    Creative is your one-stop shop for reliable website hosting
+                    services in Saskatoon. Our flexible hosting and support
+                    plans offer the necessary support to take your business to
+                    the next level.
+                  </Paragraph>
+                </ColumnRight>
+              </ContentContainer>
+            </TextWrap>
+          </AboutColTwo>
+        )}
       </AboutWrap>
     </AboutContainer>
   );

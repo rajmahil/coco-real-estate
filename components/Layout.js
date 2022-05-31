@@ -3,6 +3,7 @@ import Head from "next/head";
 
 import Footer from "./Footer";
 import Contact from "./Contact";
+import MainCallToAction from "./MainCallToAction";
 
 const Layout = ({ children, isOpen, toggle }) => {
   return (
@@ -12,6 +13,7 @@ const Layout = ({ children, isOpen, toggle }) => {
       <div>
         <main>{children}</main>
       </div>
+      <MainCallToAction />
       <Footer />
     </>
   );

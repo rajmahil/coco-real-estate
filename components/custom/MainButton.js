@@ -34,7 +34,7 @@ const IconWrap = styled.div`
   line-height: 0px;
   font-size: 1.5em;
   position: relative;
-  margin-left: ${({ isHover }) => (isHover ? "15px" : "5px")};
+  margin-left: ${({ isHover }) => (isHover ? "10px" : "5px")};
   transition: all 0.3s ease-out;
   font-weight: 500;
 `;

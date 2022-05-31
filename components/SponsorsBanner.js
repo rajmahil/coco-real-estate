@@ -1,11 +1,11 @@
 import styled from "styled-components";
 import { useState, useEffect } from "react";
 import Image from "next/image";
-import caikoz from "../public/Images/caikoz.png";
-import canary from "../public/Images/canary.png";
-import collective from "../public/Images/collective.png";
-import schwinghammer from "../public/Images/schwinghammer.png";
+import schwinghammer from "../public/Images/web-design-services-schwinghammer.png";
 import urbanscape from "../public/Images/urbanscape.png";
+import folkfest from "../public/Images/affordable-web-design-saskatoon-Folkfest.png";
+import SaskHeartCentre from "../public/Images/custom-web-design-sask-heart-centre.png";
+import Heel from "../public/Images/trucking-website-design-saskatoon- Hoffmain Elite Enterprises.png";
 import { AiFillStar } from "react-icons/ai";
 
 function getWindowDimensions() {
@@ -57,11 +57,12 @@ const GridWrap = styled.div`
 const ImageWrap = styled.div`
   width: 50%;
 `;
-const SponsorsText = styled.div`
+const SponsorsText = styled.h2`
   width: auto;
   font-weight: 600;
   font-size: 1em;
   text-transform: uppercase;
+  margin-bottom: 0px;
 
   @media screen and (max-width: 1090px) {
     text-align: center;
@@ -93,8 +94,7 @@ const SponsorsBanner = () => {
       <BannerWrap>
         <GridWrap>
           <SponsorsText>
-            Trusted by
-            <br /> professionals:
+            Trusted by professionals <br /> in Saskatoon:
           </SponsorsText>
           <StarWrap>
             <AiFillStar />
@@ -106,40 +106,55 @@ const SponsorsBanner = () => {
         </GridWrap>
         <GridWrap>
           <ImageWrap
-            style={{ width: `${windowDimensions < 600 ? "70%" : "50%"}` }}
+            style={{ width: `${windowDimensions < 600 ? "80%" : "75%"}` }}
           >
-            <Image src={caikoz} />
+            <Image
+              src={folkfest}
+              alt="affordable-web design saskatoon - Folkfest"
+            />
           </ImageWrap>
         </GridWrap>
         <GridWrap>
           <ImageWrap
-            style={{ width: `${windowDimensions < 600 ? "80%" : "80%"}` }}
+            style={{ width: `${windowDimensions < 600 ? "90%" : "75%"}` }}
           >
-            <Image src={canary} />
+            <Image
+              src={SaskHeartCentre}
+              alt="custom web design Saskatoon- Saskatchewan Heart Centre"
+            />
           </ImageWrap>
         </GridWrap>
         <GridWrap>
           <ImageWrap
             style={{
-              width: `${windowDimensions < 600 ? "85%" : "65%"}`,
+              width: `${windowDimensions < 600 ? "95%" : "75%"}`,
               paddingTop: "8px",
             }}
           >
-            <Image src={collective} />
+            <Image
+              src={Heel}
+              alt="trucking website design Saskatoon - Hoffman Elite Enterprises"
+            />
           </ImageWrap>
         </GridWrap>
         <GridWrap>
           <ImageWrap
-            style={{ width: `${windowDimensions < 600 ? "90%" : "70%"}` }}
+            style={{ width: `${windowDimensions < 600 ? "100%" : "85%"}` }}
           >
-            <Image src={schwinghammer} />
+            <Image
+              src={schwinghammer}
+              alt="Web design services Saskatoon - Schwinhammer logo"
+            />
           </ImageWrap>
         </GridWrap>
         <GridWrap>
           <ImageWrap
-            style={{ width: `${windowDimensions < 600 ? "75%" : "55%"}` }}
+            style={{ width: `${windowDimensions < 600 ? "75%" : "65%"}` }}
           >
-            <Image src={urbanscape} />
+            <Image
+              src={urbanscape}
+              alt="Coco Creative - Website Developer - Urbanscape Custom Homes Saskatoon"
+            />
           </ImageWrap>
         </GridWrap>
       </BannerWrap>

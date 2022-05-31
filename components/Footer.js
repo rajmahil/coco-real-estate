@@ -14,7 +14,7 @@ const FooterContainer = styled.footer`
   }
 `;
 const FooterWrap = styled.div`
-  max-width: 1240px;
+  max-width: 1400px;
   margin-left: auto;
   margin-right: auto;
   display: flex;

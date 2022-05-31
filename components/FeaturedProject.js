@@ -1,4 +1,6 @@
 import styled from "styled-components";
+import ValueBgTwo from "../public/Images/ValueBgTwo.png";
+import ValueBgOne from "../public/Images/ValueBgOne.png";
 import {
   Paragraph,
   ParaTextSpan,
@@ -6,17 +8,19 @@ import {
   SectionHeading,
 } from "../styles/global";
 import Image from "next/image";
-import Bhowmick from "../public/Images/Bhowmick.png";
-import {
-  MdOutlineSell,
-  MdMobileFriendly,
-  MdOutlineDesignServices,
-} from "react-icons/md";
-import { BsClipboardData } from "react-icons/bs";
-import SectionButton from "./custom/SectionButton";
+import ProjectsComponent from "./ProjectsComponent";
 
-const FeaturedContainer = styled.div`
+export const FeaturedContainer = styled.div`
   padding: 90px 75px;
+  background: #f8f8f8;
+  background-image: url(${ValueBgOne.src}), url(${ValueBgTwo.src});
+  background-position: 100% 0%, 9% 94%;
+  background-size: 290px, 350px;
+  background-repeat: no-repeat, no-repeat;
+
+  @media screen and (max-width: 1000px) {
+    background-size: 200px, 300px;
+  }
 
   @media screen and (max-width: 575px) {
     padding: 45px 22px;
@@ -28,163 +32,45 @@ const FeaturedWrap = styled.div`
   margin-right: auto;
 `;
 const TextWrap = styled.div`
-  width: 100%;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
+  max-width: 600px;
 `;
-const ContentWrap = styled.div`
-  width: auto;
+
+export const ProjectsWrap = styled.div`
+  margin-top: 40px;
   display: flex;
-  align-items: center;
-
-  @media screen and (max-width: 1090px) {
-    flex-direction: column;
-  }
-`;
-const ImageWrap = styled.div`
-  width: 50%;
-
-  @media screen and (max-width: 1090px) {
-    width: 90%;
-  }
-
-  @media screen and (max-width: 775px) {
-    width: 100%;
-  }
-`;
-const ContentTextWrap = styled.div`
-  width: 50%;
-  padding-left: 45px;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-
-  @media screen and (max-width: 1090px) {
-    width: 90%;
-    padding-left: 0px;
-  }
-
-  @media screen and (max-width: 775px) {
-    width: 100%;
-  }
-`;
-const FeaturesWrap = styled.div`
-  width: 100%;
-  display: flex;
-  padding: 45px 0px 0px 0px;
   flex-wrap: wrap;
-  justify-content: center;
-`;
-const FeaturesCol = styled.div`
-  width: 25%;
-  padding: 20px;
-  min-width: 300px;
-
-  @media screen and (max-width: 575px) {
-    width: 100%;
-  }
-`;
-const IconWrap = styled.div`
-  width: auto;
-  font-size: 3em;
-  color: #ce202f;
-`;
-const FeaturesHeading = styled.h3`
-  font-size: 1.6em;
-  color: #ce202f;
-  margin: 0px;
-`;
-const FeaturesPara = styled.p`
-  font-size: 0.9em;
-  margin-top: 10px;
-  line-height: 25px;
-  color: #747474;
-`;
-const BoldText = styled.p`
-  font-weight: 600;
-  margin-bottom: 0px;
-  font-size: 1.4em;
+  justify-content: space-between;
 `;
 
-const FeaturedProject = () => {
+const FeaturedProject = ({ projects }) => {
+  console.log(projects);
   return (
     <FeaturedContainer>
       <FeaturedWrap>
         <TextWrap>
-          <SectionHeading>
-            Featured <RedTextSpan>Project</RedTextSpan>
+          <SectionHeading style={{ textAlign: "left" }}>
+            We've helped many business owners build effective websites. Here are
+            some <RedTextSpan>recent projects</RedTextSpan>.
           </SectionHeading>
         </TextWrap>
-        <ContentWrap>
-          <ImageWrap>
-            <Image src={Bhowmick} />
-          </ImageWrap>
-          <ContentTextWrap>
-            <BoldText>
-              At quam vestibulum, elementum lorem sed, laoreet ligula.
-            </BoldText>
-            <Paragraph style={{ marginTop: "5px" }}>
-              At quam vestibulum, elementum lorem sed, laoreet ligula. Donec
-              euismod, purus at dictum faucibus, turpis enim lobortis ligula, in
-              ornare mi libero eu felis. Vestibulum metus tortor, convallis sed
-              tortor sagittis, accumsan fermentum sem. Vestibulum finibus justo
-              risus, sed condimentum dui laoreet vel. Donec at eros quis sem
-              vulputate scelerisque luctus nec metus. Vivamus nulla sapien,
-              vestibulum id tortor porttitor, suscipit eleifend odio. Cras
-              semper egestas pulvinar.
-            </Paragraph>
-            <SectionButton
-              innerHTML="View Website"
-              Href="https://www.bhowmickrealty.com/"
-            />
-          </ContentTextWrap>
-        </ContentWrap>
-        <FeaturesWrap>
-          <FeaturesCol>
-            <IconWrap>
-              <MdOutlineSell />
-            </IconWrap>
-            <FeaturesHeading>Sales-Driving Features</FeaturesHeading>
-            <FeaturesPara>
-              Your marketing efforts are a direct reflection of how you&apos;ll
-              market your client&apos;s home. Show them you&apos;re the best in
-              the biz.
-            </FeaturesPara>
-          </FeaturesCol>
-          <FeaturesCol>
-            <IconWrap>
-              <MdMobileFriendly />
-            </IconWrap>
-            <FeaturesHeading>Fully Responsive</FeaturesHeading>
-            <FeaturesPara>
-              Your marketing efforts are a direct reflection of how you&apos;ll
-              market your client&apos;s home. Show them you&apos;re the best in
-              the biz.
-            </FeaturesPara>
-          </FeaturesCol>
-          <FeaturesCol>
-            <IconWrap>
-              <BsClipboardData />
-            </IconWrap>
-            <FeaturesHeading>Listings and IDX</FeaturesHeading>
-            <FeaturesPara>
-              Your marketing efforts are a direct reflection of how you&apos;ll
-              market your client&apos;s home. Show them you&apos;re the best in
-              the biz.
-            </FeaturesPara>
-          </FeaturesCol>
-          <FeaturesCol>
-            <IconWrap>
-              <MdOutlineDesignServices />
-            </IconWrap>
-            <FeaturesHeading>Memorable Design</FeaturesHeading>
-            <FeaturesPara>
-              Your marketing efforts are a direct reflection of how you&apos;ll
-              market your client&apos;s home. Show them you&apos;re the best in
-              the biz.
-            </FeaturesPara>
-          </FeaturesCol>
-        </FeaturesWrap>
+        <ProjectsWrap>
+          {projects.map(
+            (project) =>
+              project.featuredProject && (
+                <ProjectsComponent
+                  key={project.id}
+                  imageLink={project.projectImage.url}
+                  heading={project.title}
+                  subHeading={project.projectShortDescription}
+                  projectSlug={`/projects/${project.slug}`}
+                  altImage={project.projectImage.alternativeText}
+                  tags={project.project_tags}
+                />
+              )
+          )}
+        </ProjectsWrap>
       </FeaturedWrap>
     </FeaturedContainer>
   );

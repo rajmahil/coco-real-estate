@@ -17,7 +17,7 @@ const CtaWrap = styled.div`
   }
 `;
 const CtaContentWrap = styled.div`
-  max-width: 1240px;
+  max-width: 1400px;
   color: #fff;
   width: 100%;
   display: flex;
@@ -53,7 +53,7 @@ const MainCallToAction = () => {
             </Paragraph>
           </TextWrap>
           <Link href="/contact" passHref>
-            <SecGlobalButton>Book a Strategy Call</SecGlobalButton>
+            <SecGlobalButton>Let's Get in Touch!</SecGlobalButton>
           </Link>
         </CtaContentWrap>
       </CtaWrap>

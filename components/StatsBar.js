@@ -69,7 +69,14 @@ const StatsBar = () => {
   return (
     <StatsBarContainer>
       <StatsBarWrap>
-        <SectionHeading style={{ color: "#fff", textAlign: "center" }}>
+        <SectionHeading
+          style={{
+            color: "#fff",
+            textAlign: "center",
+            marginLeft: "auto",
+            marginRight: "auto",
+          }}
+        >
           On average our websites generate:
         </SectionHeading>
         <StatsBarGridWrap>
