@@ -62,9 +62,9 @@ const ProjectDetails = ({ project }) => {
   return (
     <>
       <ProjectHeader
-        heading={project.title}
-        tags={project.project_tags}
-        projectLink={project.projectLink}
+        heading={project?.title}
+        tags={project?.project_tags}
+        projectLink={project?.projectLink}
       />
       <PageWrap>
         <LongDescription
@@ -74,7 +74,7 @@ const ProjectDetails = ({ project }) => {
         />
         <PhotoWrap>
           {project.projectImages.map((image) => (
-            <ProjectImage src={image.url} key={image.id} />
+            <ProjectImage src={image?.url} key={image?.id} />
           ))}
         </PhotoWrap>
         <ViewAllProjects />
