@@ -58,7 +58,7 @@ const ProjectDetails = ({ project }) => {
   const md = new MarkdownIt({
     html: true,
   });
-  const htmlContent = md.render(project?.projectLongDescription?.toString());
+
   console.log(project);
   return (
     <>
@@ -68,11 +68,7 @@ const ProjectDetails = ({ project }) => {
         projectLink={project?.projectLink}
       />
       <PageWrap>
-        <LongDescription
-          dangerouslySetInnerHTML={{
-            __html: htmlContent,
-          }}
-        />
+        <LongDescription>{project?.projectLongDescription}</LongDescription>
         <PhotoWrap>
           {project.projectImages.map((image) => (
             <ProjectImage src={image?.url} key={image?.id} />
