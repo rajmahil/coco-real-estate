@@ -56,7 +56,7 @@ const ProjectImage = styled.img`
 
 const ProjectDetails = ({ project }) => {
   const md = new MarkdownIt({
-    html: true,
+    html: false,
   });
   console.log(project);
   return (
