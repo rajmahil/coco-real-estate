@@ -18,7 +18,7 @@ const PageWrap = styled.div`
   }
 `;
 
-const LongDescription = styled.p`
+const LongDescription = styled.div`
   color: #747474;
   line-height: 26px;
   font-size: 1em;
@@ -58,8 +58,6 @@ const ProjectDetails = ({ project }) => {
   const md = new MarkdownIt({
     html: true,
   });
-  var result = md.render(project?.projectLongDescription);
-
   console.log(project);
   return (
     <>
@@ -71,7 +69,7 @@ const ProjectDetails = ({ project }) => {
       <PageWrap>
         <LongDescription
           dangerouslySetInnerHTML={{
-            __html: result,
+            __html: md.render(project?.projectLongDescription.toString()),
           }}
         />
         <PhotoWrap>
