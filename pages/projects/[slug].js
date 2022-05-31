@@ -18,7 +18,7 @@ const PageWrap = styled.div`
   }
 `;
 
-const LongDescription = styled.div`
+const LongDescription = styled.p`
   color: #747474;
   line-height: 26px;
   font-size: 1em;
