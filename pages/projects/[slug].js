@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import ProjectHeader from "../../components/ProjectHeader";
 import styled from "styled-components";
 import { Paragraph } from "../../styles/global";
@@ -55,10 +55,6 @@ const ProjectImage = styled.img`
 `;
 
 const ProjectDetails = ({ project }) => {
-  const md = new MarkdownIt({
-    html: true,
-  });
-
   console.log(project);
   return (
     <>
@@ -82,7 +78,7 @@ const ProjectDetails = ({ project }) => {
   );
 };
 
-export async function getStaticPaths() {
+export const getStaticPaths = async () => {
   const res = await fetch(
     "https://floating-hollows-19339.herokuapp.com/projects/"
   );
@@ -94,13 +90,13 @@ export async function getStaticPaths() {
 
   return {
     paths,
-    fallback: true,
+    fallback: false,
   };
-}
+};
 
 //gets data for individual pages
 
-export async function getStaticProps({ params }) {
+export const getStaticProps = async ({ params }) => {
   const { slug } = params;
   const res = await fetch(
     `https://floating-hollows-19339.herokuapp.com/projects?slug=${slug}`
@@ -113,6 +109,6 @@ export async function getStaticProps({ params }) {
       project,
     },
   };
-}
+};
 
 export default ProjectDetails;
