@@ -70,11 +70,9 @@ const ProjectDetails = ({ project }) => {
       <PageWrap>
         <LongDescription>{project?.projectLongDescription}</LongDescription>
         <PhotoWrap>
-          {!project
-            ? "...loading"
-            : project.projectImages.map((image) => (
-                <ProjectImage src={image?.url} key={image?.id} />
-              ))}
+          {project?.projectImages?.map((image) => (
+            <ProjectImage src={image?.url} key={image?.id} />
+          ))}
         </PhotoWrap>
         <ViewAllProjects />
       </PageWrap>
