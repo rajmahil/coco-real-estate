@@ -58,6 +58,7 @@ const ProjectDetails = ({ project }) => {
   const md = new MarkdownIt({
     html: true,
   });
+  const htmlContent = md.render(project?.projectLongDescription?.toString());
   console.log(project);
   return (
     <>
@@ -69,7 +70,7 @@ const ProjectDetails = ({ project }) => {
       <PageWrap>
         <LongDescription
           dangerouslySetInnerHTML={{
-            __html: md.render(project?.projectLongDescription.toString()),
+            __html: htmlContent,
           }}
         />
         <PhotoWrap>
