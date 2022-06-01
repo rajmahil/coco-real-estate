@@ -8,6 +8,7 @@ import ValuePropImage from "../public/Images/ValuePropImage.png";
 import { BiLandscape, BiVolumeFull, BiWrench } from "react-icons/bi";
 import StatsBarImage from "../public/Images/StatsBarImage.png";
 import Testimonials from "../components/Testimonials.js";
+import Head from "next/head";
 
 const SectionWrap = styled.div`
   padding: 90px 45px;
@@ -82,13 +83,13 @@ const About = () => {
   return (
     <>
       <PageHeader
-        heading="We're here help you reach and exceed your"
-        textSpan="business goals"
+        heading="More"
+        textSpan="About Us"
         paragraph="Since 2015, We've helped many construction business owners generate exceptional results. Learn more about us below!"
       />{" "}
       <RajBio />
-      <SectionWrap>
-        <SectionContainer>
+      {/*<SectionWrap>
+         <SectionContainer>
           <SectionHeading
             style={{
               textAlign: "left",
@@ -100,7 +101,7 @@ const About = () => {
             We provide purpose-driven web design, small business marketing &
             Search Engine Optimization services.
           </SectionHeading>
-          <ColContainer>
+           <ColContainer>
             <Col65>
               <Image
                 src={ValuePropImage}
@@ -150,19 +151,9 @@ const About = () => {
                 </Paragraph>
               </CardsWrap>
             </Col35>
-          </ColContainer>
+          </ColContainer> 
         </SectionContainer>
-      </SectionWrap>
-      <SectionWrap style={{ background: "#fff" }}>
-        <SectionHeading
-          style={{ maxWidth: "628px", textAlign: "center", marginLeft: "auto" }}
-        >
-          We&apos;ve helped many business achieve{" "}
-          <RedTextSpan>exceptional result</RedTextSpan>. Below are a few honest
-          testimonials.
-        </SectionHeading>
-        <Testimonials />
-      </SectionWrap>
+      </SectionWrap>*/}
     </>
   );
 };

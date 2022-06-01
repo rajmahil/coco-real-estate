@@ -187,10 +187,9 @@ const ContactForm = () => {
 
   return (
     <ContactFromContainer>
-      <ContactFromHeading>Book a Strategy Call</ContactFromHeading>
+      <ContactFromHeading>Let&apos;s Discuss Your Project! </ContactFromHeading>
       <ContactFromSubheading>
-        Fill out the form below to schedule your free no-obligation strategy
-        call. We promise to respond within 24 hours.
+        Please fill out the form below. We promise to respond within 24 hours.
       </ContactFromSubheading>
       <ContactFormWrap onSubmit={sendEmail}>
         <ContactFromInput

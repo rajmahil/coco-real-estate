@@ -125,7 +125,7 @@ const ProjectsComponent = ({
             <ProjectTag key={tag.id}>{tag.projectTag}</ProjectTag>
           ))}
         </TagsWrap>
-        <ViewProjectBtn href={projectSlug} />
+        <ViewProjectBtn href={projectSlug} text="View Project" blank={false} />
       </TextWrap>
     </ProjectWrap>
   );

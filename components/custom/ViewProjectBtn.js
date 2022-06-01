@@ -27,21 +27,41 @@ const IconWrap = styled.div`
   transition: all 0.2s ease-out;
 `;
 
-const ViewProjectBtn = ({ href }) => {
+const ViewProjectBtn = ({ href, text, blank }) => {
   const [isHover, setIsHover] = useState(false);
 
   return (
-    <Link passHref href={href}>
-      <ButtonWrap
-        onMouseEnter={() => setIsHover(true)}
-        onMouseLeave={() => setIsHover(false)}
-      >
-        <ButtonText>View Project </ButtonText>
-        <IconWrap isHover={isHover}>
-          <FiArrowRight />
-        </IconWrap>
-      </ButtonWrap>
-    </Link>
+    <>
+      {blank ? (
+        <a
+          style={{ color: "#000", textDecoration: "none" }}
+          target="_blank"
+          href={href}
+        >
+          <ButtonWrap
+            onMouseEnter={() => setIsHover(true)}
+            onMouseLeave={() => setIsHover(false)}
+          >
+            <ButtonText>{text}</ButtonText>
+            <IconWrap isHover={isHover}>
+              <FiArrowRight />
+            </IconWrap>
+          </ButtonWrap>
+        </a>
+      ) : (
+        <Link passHref href={href}>
+          <ButtonWrap
+            onMouseEnter={() => setIsHover(true)}
+            onMouseLeave={() => setIsHover(false)}
+          >
+            <ButtonText>{text}</ButtonText>
+            <IconWrap isHover={isHover}>
+              <FiArrowRight />
+            </IconWrap>
+          </ButtonWrap>
+        </Link>
+      )}
+    </>
   );
 };
 

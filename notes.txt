@@ -1,1 +1,29 @@
 https://yasrealty.ca/
+
+  <ProjectHeader
+        heading={project?.title}
+        tags={project?.project_tags}
+        projectLink={project?.projectLink}
+      />
+      <PageWrap>
+        <LongDescription
+          dangerouslySetInnerHTML={{
+            __html: md.render(project?.projectLongDescription),
+          }}
+        />
+        <PhotoWrap>
+          {!project
+            ? "...loading"
+            : project?.projectImages?.map((image) => (
+                <ProjectImageWrap key={image?.id}>
+                  <Image
+                    src={image?.url}
+                    alt={image?.alternativeText}
+                    layout="fill"
+                    objectFit="fill"
+                  />
+                </ProjectImageWrap>
+              ))}
+        </PhotoWrap>
+        <ViewAllProjects />
+      </PageWrap>

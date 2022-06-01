@@ -36,21 +36,29 @@ const TextWrap = styled.div`
   justify-content: center;
 `;
 
+const PageHeading = styled.h1`
+  font-size: 3.2em;
+  font-weight: 800;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 5px;
+  margin-top: 0px;
+`;
+
+const PageSubheading = styled.div`
+  font-size: 1.22em;
+`;
+
 const PageHeader = ({ heading, textSpan, paragraph, projectLink }) => {
   return (
     <PageHeaderWrap>
       <TextWrap>
-        <SectionHeading
-          style={{
-            textAlign: "center",
-            marginLeft: "auto",
-            marginRight: "auto",
-          }}
-        >
+        <PageHeading>
           {heading}
           <RedTextSpan> {textSpan}</RedTextSpan>
-        </SectionHeading>
-        <Paragraph>{paragraph}</Paragraph>
+        </PageHeading>
+        <PageSubheading>{paragraph}</PageSubheading>
       </TextWrap>
     </PageHeaderWrap>
   );

@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image";
 import styled from "styled-components";
 import bioBackground from "../public/Images/bioBackground.png";
 import rajMahilImage from "../public/Images/rajMahilImage.png";
@@ -68,8 +69,20 @@ const ColText = styled.div`
   }
 `;
 
-const RajMahilImage = styled.img`
+const RajMahilImage = styled.div`
   width: 100%;
+  height: 700px;
+  position: relative;
+
+  @media screen and (max-width: 650px) {
+    height: 500px;
+  }
+  @media screen and (max-width: 450px) {
+    height: 400px;
+  }
+  @media screen and (max-width: 375px) {
+    height: 350px;
+  }
 `;
 
 const RajMahilText = styled.h3`
@@ -84,7 +97,9 @@ const RajBio = () => {
     <BioContainer>
       <BioWrap>
         <ColImage>
-          <RajMahilImage src={rajMahilImage.src} />
+          <RajMahilImage>
+            <Image src={rajMahilImage} layout="fill" objectFit="contain" />
+          </RajMahilImage>
         </ColImage>
         <ColText>
           <SectionHeading>

@@ -3,6 +3,7 @@ import PageHeader from "../../components/PageHeader";
 import ProjectsComponent from "../../components/ProjectsComponent";
 import styled from "styled-components";
 import { ProjectsWrap } from "../../components/FeaturedProject";
+import Head from "next/head";
 
 const PageWrap = styled.div`
   max-width: 1400px;
@@ -14,9 +15,27 @@ const PageWrap = styled.div`
 const ProjectPage = ({ projects }) => {
   return (
     <>
+      <Head>
+        <title>Our Portfolio | Coco Creative Saskatoon </title>
+        <meta
+          name="description"
+          content="Coco Creative is the premier choice for web development in Saskatoon, Saskatchewan. Over the past decade, We have help local businesses build eCommerce websites, custom WordPress websites, Search Engine Optimization (SEO) services, Web hosting, and much more!"
+        />
+        <meta
+          property="og:title"
+          content="Our Portfolio | Coco Creative Saskatoon"
+        />
+        <meta
+          property="og:description"
+          content="Coco Creative is the premier choice for web development in Saskatoon, Saskatchewan. Over the past decade, We have help local businesses build eCommerce websites, custom WordPress websites, Search Engine Optimization (SEO) services, Web hosting, and much more!
+          "
+        />
+        <link rel="canonical" href="https://cococreativeweb.com/projects/" />
+      </Head>
       <PageHeader
-        heading="We've helped many business owners build effective websites"
-        textSpan="Here are some of our latest projects"
+        heading="Our"
+        textSpan="Portfolio"
+        paragraph="Here is a look into our latest projects!"
       />
       <PageWrap>
         <ProjectsWrap>

@@ -138,8 +138,8 @@ const Services = () => {
   return (
     <>
       <PageHeader
-        heading="Trusted professional services to help"
-        textSpan="grow your business"
+        heading="Trusted "
+        textSpan="Services"
         paragraph="Our emphasis on strategy coupled with a results-first approach ensures more leads and more clientele for your construction business."
       />
       <SectionWrap>
