@@ -37,6 +37,7 @@ const ViewProjectBtn = ({ href, text, blank }) => {
           style={{ color: "#000", textDecoration: "none" }}
           target="_blank"
           href={href}
+          rel="noreferrer"
         >
           <ButtonWrap
             onMouseEnter={() => setIsHover(true)}
