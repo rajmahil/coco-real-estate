@@ -1,0 +1,11 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://www.cococreativeweb.com/
+
+# Sitemaps
+Sitemap: https://www.cococreativeweb.com/sitemap.xml
+Sitemap: https://www.cococreativeweb.com/sitemap-0.xml
+Sitemap: https://www.cococreativeweb.com/server-sitemap.xml
