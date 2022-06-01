@@ -10,7 +10,7 @@ import Image from "next/image";
 import { ProjectTag, TagsWrap } from "../../components/ProjectsComponent";
 import ViewProjectBtn from "../../components/custom/ViewProjectBtn";
 
-const PageWrap = styled.div`
+const PageWrap = styled.article`
   padding: 150px 45px 90px 45px;
   display: flex;
   flex-direction: column;

@@ -11,6 +11,7 @@ import { BiLandscape, BiVolumeFull, BiWrench } from "react-icons/bi";
 import processImageOne from "../public/Images/processImageOne.png";
 import processImageTwo from "../public/Images/processImageTwo.png";
 import processImageThree from "../public/Images/processImageThree.png";
+import Head from "next/head";
 
 export const SectionWrap = styled.div`
   padding: 90px 45px;
@@ -137,6 +138,24 @@ const ProcessColRight = styled.div`
 const Services = () => {
   return (
     <>
+      <Head>
+        <title>Our Services | Coco Creative Saskatoon</title>
+        <meta
+          name="description"
+          content="At Coco Creative, we offer various services to meet your business needs. Whether it is modern website design, eCommerce stores, custom WordPress websites, Search Engine Optimization (SEO) or relaible hosting, we have you covered! .
+          "
+        />
+        <meta
+          property="og:title"
+          content="Our Services | Coco Creative Saskatoon"
+        />
+        <meta
+          property="og:description"
+          content="At Coco Creative, we offer various services to meet your business needs. Whether it is modern website design, eCommerce stores, custom WordPress websites, Search Engine Optimization (SEO) or relaible hosting, we have you covered! "
+        />
+        <link rel="canonical" href="https://cococreativeweb.com/services" />
+        <meta property="og:type" content="website" />
+      </Head>
       <PageHeader
         heading="Trusted "
         textSpan="Services"
