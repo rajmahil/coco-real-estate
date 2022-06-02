@@ -31,6 +31,11 @@ function MyApp({ Component, pageProps }) {
       </Script>
       <Head>
         <link rel="stylesheet" href="https://use.typekit.net/dwl6tjb.css" />
+        <meta
+          property="og:image"
+          content="https://res.cloudinary.com/dmcsstcqf/image/upload/v1653961465/OGImage_er2lnr.png"
+        />
+        <meta property="og:locale" content="en_US" />
       </Head>
       <Layout
         style={{ padding: "0", margin: "0" }}
