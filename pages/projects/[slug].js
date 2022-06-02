@@ -207,6 +207,7 @@ const ProjectDetails = ({ project }) => {
             <ImageWrap>
               <Image
                 src={project?.projectImage?.url}
+                alt={project?.projectImage?.alternativeText}
                 layout="fill"
                 objectFit="contain"
               />
@@ -249,7 +250,11 @@ const ProjectDetails = ({ project }) => {
           <PhotoWrap>
             {project?.projectImages.map((image) => (
               <ProjectImageWrap key={image?.id}>
-                <Image src={image?.url} layout="fill" />
+                <Image
+                  src={image?.url}
+                  alt={image?.alternativeText}
+                  layout="fill"
+                />
               </ProjectImageWrap>
             ))}
           </PhotoWrap>
