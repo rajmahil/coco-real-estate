@@ -36,6 +36,11 @@ export const GlobalButton = styled.div`
     background: #000;
     border: 3px #000 solid;
   }
+
+  @media screen and (max-width: 500px) {
+    font-size: 1em;
+    padding: 14px 22px;
+  }
 `;
 
 export const SectionHeading = styled.h2`
@@ -71,13 +76,14 @@ export const SecGlobalButton = styled.div`
     border: 3px #000 solid;
   }
 
-  @media screen and (max-width: 975px){
-    margin: 0px;
+  @media screen and (max-width: 500px) {
+    margin-left: 5px;
+    
   }
 
   @media screen and (max-width: 500px) {
     font-size: 1em;
-    
+    padding: 14px 22px;
   }
 `;
 

@@ -170,16 +170,16 @@ const Navbar = ({ isOpen, toggle }) => {
           >
             <MobileMenuWrap>
               <Link passHref href="/about">
-                <MenuItem>About</MenuItem>
+                <MenuItem onClick={menuToggle}>About</MenuItem>
               </Link>
               <Link passHref href="/services">
-                <MenuItem>Services</MenuItem>
+                <MenuItem onClick={menuToggle}>Services</MenuItem>
               </Link>
               <Link passHref href="/projects">
-                <MenuItem>Portfolio</MenuItem>
+                <MenuItem onClick={menuToggle}>Portfolio</MenuItem>
               </Link>
               <Link passHref href="/contact">
-                <MenuItem>Contact Us</MenuItem>
+                <MenuItem onClick={menuToggle}>Contact Us</MenuItem>
               </Link>
             </MobileMenuWrap>
           </MenuTopBar>
