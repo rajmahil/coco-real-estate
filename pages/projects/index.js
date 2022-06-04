@@ -19,7 +19,7 @@ const ProjectPage = ({ projects }) => {
         <title>Our Portfolio | Coco Creative Saskatoon </title>
         <meta
           name="description"
-          content="Coco Creative is the premier choice for web development in Saskatoon, Saskatchewan. Over the past decade, We have helped local businesses build eCommerce websites, custom WordPress websites, Search Engine Optimization (SEO) services, Web hosting, and much more!"
+          content="Coco Creative is the premier choice for web development in Saskatoon, Saskatchewan. Over the past decade, We have helped local businesses build eCommerce websites, custom WordPress websites, Search Engine Optimization (SEO) services, Web hosting, and much more."
         />
         <meta
           property="og:title"
