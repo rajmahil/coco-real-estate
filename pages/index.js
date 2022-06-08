@@ -22,7 +22,7 @@ export default function Home({ toggle, projects }) {
         </title>
         <meta
           name="description"
-          content="Coco Creative is a full-service web design agency in Saskatoon, Saskatchewan. From custom WordPress websites, and eCommerce stores to best-in-call Search Engine Optimization (SEO) services, Coco Creative is here to help! We will build a modern website that takes your business to the next level.
+          content="Coco Creative is a full-service web design agency in Saskatoon, Saskatchewan. From custom WordPress websites, and eCommerce stores to best-in-class Search Engine Optimization (SEO) services, Coco Creative is here to help! We will build a modern website that takes your business to the next level.
           "
         />
         <meta
