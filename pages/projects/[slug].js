@@ -9,6 +9,7 @@ import Head from "next/head";
 import Image from "next/image";
 import { ProjectTag, TagsWrap } from "../../components/ProjectsComponent";
 import ViewProjectBtn from "../../components/custom/ViewProjectBtn";
+import { useRouter } from "next/router";
 
 const PageWrap = styled.article`
   padding: 150px 45px 90px 45px;
@@ -183,18 +184,25 @@ const PageHeading = styled.h1`
   }
 `;
 
-const ProjectDetails = ({ project }) => {
+const ProjectDetails = ({ projects }) => {
+  const router = useRouter();
   const md = new MarkdownIt({
     html: true,
   });
+  if (router.isFallback) {
+    return <div>Loading...</div>;
+  }
+
+  const project = projects[0];
+
   console.log(project);
   return (
     <>
       <Head>
-        <title>{project?.titleTag}</title>
-        <meta name="description" content={project?.metaDescription} />
-        <meta property="og:title" content={project?.titleTag} />
-        <meta property="og:description" content={project?.metaDescription} />
+        <title>{project.titleTag}</title>
+        <meta name="description" content={project.metaDescription} />
+        <meta property="og:title" content={project.titleTag} />
+        <meta property="og:description" content={project.metaDescription} />
         <link
           rel="canonical"
           href={`https://cococreativeweb.com/projects/${project.slug}`}
@@ -244,7 +252,7 @@ const ProjectDetails = ({ project }) => {
           <Paragraph
             style={{ lineHeight: "35px" }}
             dangerouslySetInnerHTML={{
-              __html: md.render(project?.projectLongDescription),
+              __html: md.render(project.projectLongDescription),
             }}
           />
           <PhotoWrap>
@@ -272,7 +280,7 @@ export const getStaticPaths = async () => {
   const projects = await res.json();
 
   const paths = projects.map((project) => ({
-    params: { slug: project?.slug },
+    params: { slug: project.slug },
   }));
 
   return {
@@ -288,13 +296,13 @@ export const getStaticProps = async ({ params }) => {
   const res = await fetch(
     `https://floating-hollows-19339.herokuapp.com/projects?slug=${slug}`
   );
-  const data = await res.json();
-  const project = data[0];
+  const projects = await res.json();
 
   return {
     props: {
-      project,
+      projects,
     },
+    revalidate: 1,
   };
 };
 
