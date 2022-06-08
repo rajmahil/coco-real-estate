@@ -191,10 +191,10 @@ const ProjectDetails = ({ project }) => {
   return (
     <>
       <Head>
-        <title>{project.titleTag}</title>
-        <meta name="description" content={project.metaDescription} />
-        <meta property="og:title" content={project.titleTag} />
-        <meta property="og:description" content={project.metaDescription} />
+        <title>{project?.titleTag}</title>
+        <meta name="description" content={project?.metaDescription} />
+        <meta property="og:title" content={project?.titleTag} />
+        <meta property="og:description" content={project?.metaDescription} />
         <link
           rel="canonical"
           href={`https://cococreativeweb.com/projects/${project.slug}`}
