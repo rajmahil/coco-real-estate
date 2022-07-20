@@ -12,7 +12,7 @@ const Contact = () => {
         />
         <meta
           property="og:title"
-          content="Contact Us | Coco Creative Saskatoon"
+          content="Contact Us | Coco Creative in Saskatoon"
         />
         <meta
           property="og:description"
