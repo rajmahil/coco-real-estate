@@ -273,28 +273,42 @@ const ProjectDetails = ({ projects }) => {
   );
 };
 
-export const getStaticPaths = async () => {
-  const res = await fetch(
-    "https://floating-hollows-19339.herokuapp.com/projects/"
-  );
-  const projects = await res.json();
+// export const getStaticPaths = async () => {
+//   const res = await fetch(
+//     "https://floating-hollows-19339.herokuapp.com/projects/"
+//   );
+//   const projects = await res.json();
 
-  const paths = projects.map((project) => ({
-    params: { slug: project.slug },
-  }));
+//   const paths = projects.map((project) => ({
+//     params: { slug: project.slug },
+//   }));
 
-  return {
-    paths,
-    fallback: true,
-  };
-};
+//   return {
+//     paths,
+//     fallback: true,
+//   };
+// };
 
 //gets data for individual pages
 
-export const getStaticProps = async ({ params }) => {
-  const { slug } = params;
+// export const getStaticProps = async ({ params }) => {
+//   const { slug } = params;
+//   const res = await fetch(
+//     `https://floating-hollows-19339.herokuapp.com/projects?slug=${slug}`
+//   );
+//   const projects = await res.json();
+
+//   return {
+//     props: {
+//       projects,
+//     },
+//     revalidate: 1,
+//   };
+// };
+
+export async function getServerSideProps({ params }) {
   const res = await fetch(
-    `https://floating-hollows-19339.herokuapp.com/projects?slug=${slug}`
+    `https://floating-hollows-19339.herokuapp.com/projects?slug=${params.slug}`
   );
   const projects = await res.json();
 
@@ -302,8 +316,7 @@ export const getStaticProps = async ({ params }) => {
     props: {
       projects,
     },
-    revalidate: 1,
   };
-};
+}
 
 export default ProjectDetails;
