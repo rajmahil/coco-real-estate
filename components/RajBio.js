@@ -13,10 +13,11 @@ import {
 
 const BioContainer = styled.div`
   padding: 90px 75px;
-  background-image: url(${bioBackground.src});
+  position: relative;
+  /* background-image: url(${bioBackground.src});
   background-repeat: no-repeat;
   background-position: 15% 20%;
-  background-size: 390px;
+  background-size: 390px; */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -92,9 +93,45 @@ const RajMahilText = styled.h3`
   line-height: 10px;
 `;
 
+const BackImageWrap = styled.div`
+  position: absolute;
+  z-index: -1;
+  top: 8%;
+  left: 12%;
+  width: 350px;
+
+  @media screen and (max-width: 1700px) {
+    left: 8%;
+  }
+
+  @media screen and (max-width: 1570px) {
+    left: 5%;
+  }
+
+  @media screen and (max-width: 1420px) {
+    left: 2%;
+  }
+  @media screen and (max-width: 1250px) {
+    top: 2%;
+  }
+  @media screen and (max-width: 750px) {
+    top: 0%;
+    left: 0%;
+  }
+  @media screen and (max-width: 650px) {
+    width: 250px;
+  }
+  @media screen and (max-width: 450px) {
+    width: 200px;
+  }
+`;
+
 const RajBio = () => {
   return (
     <BioContainer>
+      <BackImageWrap>
+        <Image src={bioBackground} />
+      </BackImageWrap>
       <BioWrap>
         <ColImage>
           <RajMahilImage>
@@ -126,7 +163,7 @@ const RajBio = () => {
             <br />
             <br /> I look forward to working with your business.
           </Paragraph>
-          <img src={RajMahilSignature.src} alt="Raj Mahil Signature" />
+          <Image src={RajMahilSignature} alt="Raj Mahil Signature" />
           <RajMahilText>Raj Mahil</RajMahilText>
           <Paragraph>Founder & CEO</Paragraph>
         </ColText>

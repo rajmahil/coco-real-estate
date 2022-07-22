@@ -25,7 +25,7 @@ import {
 const AboutContainer = styled.div`
   width: auto;
   padding: 90px 75px;
-  background: ${({ isTwo }) =>
+  /* background: ${({ isTwo }) =>
     isTwo ? `url(${AboutBgPatternTwo.src})` : `url(${AboutBgPattern.src})`};
   background-repeat: no-repeat;
   background-size: 500px;
@@ -46,10 +46,15 @@ const AboutContainer = styled.div`
   @media screen and (max-width: 500px) {
     background-position: ${({ isTwo }) => (isTwo ? "100% 0%" : "0% 0%")};
     background-size: 300px;
+  } */
+
+  @media screen and (max-width: 575px) {
+    padding: 45px 22px;
   }
 `;
 const AboutWrap = styled.div`
   max-width: 1400px;
+  position: relative;
   margin-left: auto;
   margin-right: auto;
   display: flex;
@@ -136,10 +141,40 @@ const ContentHeding = styled.h3`
   margin-bottom: 5px;
 `;
 
+const BgImageWrapOne = styled.div`
+  position: absolute;
+  top: -40px;
+  right: -70px;
+  z-index: -1;
+  width: 450px;
+
+  @media screen and (max-width: 650px) {
+    width: 300px;
+  }
+`;
+const BgImageWrapTwo = styled.div`
+  position: absolute;
+  top: -40px;
+  left: -70px;
+  width: 450px;
+  @media screen and (max-width: 650px) {
+    width: 300px;
+  }
+`;
+
 const About = ({ isTwo }) => {
   return (
     <AboutContainer isTwo={isTwo}>
       <AboutWrap isTwo={isTwo}>
+        {isTwo ? (
+          <BgImageWrapOne>
+            <Image src={AboutBgPattern} />
+          </BgImageWrapOne>
+        ) : (
+          <BgImageWrapTwo>
+            <Image src={AboutBgPattern} />
+          </BgImageWrapTwo>
+        )}
         <AboutColOne>
           <ImageWrap isTwo={isTwo}>
             {isTwo ? (

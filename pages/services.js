@@ -19,9 +19,9 @@ export const SectionWrap = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-image: url(${ValueBgTwo.src});
+  /* background-image: url(${ValueBgTwo.src});
   background-position: 0% 50%;
-  background-size: 330px;
+  background-size: 330px; */
   background-repeat: no-repeat;
 
   @media screen and (max-width: 650px) {

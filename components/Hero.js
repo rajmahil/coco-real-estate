@@ -2,7 +2,12 @@ import Link from "next/link";
 import { useState, useEffect } from "react";
 import styled from "styled-components";
 import heroVidOverlay from "../public/Images/heroVidOverlay.png";
-
+import Image from "next/image";
+import HeroImage1 from "../public/Images/HeroImages/heroImage1.png";
+import HeroImage2 from "../public/Images/HeroImages/heroImage2.png";
+import HeroImage3 from "../public/Images/HeroImages/heroImage3.png";
+import HeroImage4 from "../public/Images/HeroImages/heroImage4.png";
+import HeroImage5 from "../public/Images/HeroImages/heroImage5.png";
 import {
   GlobalButton,
   Paragraph,
@@ -72,28 +77,47 @@ const HeroVideo = styled.video`
   height: 100%;
   z-index: -1;
 `;
-
 const HeroVidOverlay = styled.div`
-  background-image: url(${(props) => props.image.src});
+  /* background-image: url(${(props) => props.image.src}); */
   z-index: 10;
   width: 100%;
   height: 88vh;
   position: absolute;
 `;
-
 const ButtonWrap = styled.div`
   display: flex;
   flex-wrap: wrap;
   align-items: center;
 `;
 
+const HeroImageWrap = styled.div`
+  width: auto;
+  position: relative;
+  height: 88vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`;
+
 const Hero = () => {
   const [currentWord, setCurrentWord] = useState(0);
+  const [currImage, setCurrImage] = useState(0);
   const HeroWords = [
     "affordable",
     "attractive",
     "results-oriented",
     "mobile-responsive",
+  ];
+
+  const heroImages = [
+    { imageUrl: HeroImage1, imageAlt: "custom web design saskatoon" },
+    {
+      imageUrl: HeroImage2,
+      imageAlt: "custom wordpress websites saskatchewan",
+    },
+    { imageUrl: HeroImage3, imageAlt: "ecommerce website design saskatoon" },
+    { imageUrl: HeroImage4, imageAlt: "digital marketing agency canada" },
+    { imageUrl: HeroImage5, imageAlt: "hydrovac website design" },
   ];
 
   const NextWord = () => {
@@ -105,9 +129,13 @@ const Hero = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       NextWord();
+      currImage === heroImages.length - 1
+        ? setCurrImage(0)
+        : setCurrImage((currImage) => currImage + 1);
     }, 2000);
     return () => clearInterval(interval);
   });
+
   return (
     <HeroContainer>
       <HeroColumnText>
@@ -136,13 +164,23 @@ const Hero = () => {
         </TextWrap>
       </HeroColumnText>
       <HeroVideoCol>
-        <HeroVidOverlay image={heroVidOverlay}></HeroVidOverlay>
-        <HeroVideo loop autoPlay muted>
+        <HeroVidOverlay image={heroVidOverlay}>
+          <Image src={heroVidOverlay} layout="fill" objectFit="cover" />
+        </HeroVidOverlay>
+        {/* <HeroVideo loop autoPlay muted>
           <source
             src="https://res.cloudinary.com/dkmlwbskl/video/upload/v1653597789/heroVideo_ekqtwg.mp4"
             type="video/mp4"
           />
-        </HeroVideo>
+        </HeroVideo> */}
+        <HeroImageWrap>
+          <Image
+            src={heroImages[currImage].imageUrl}
+            alt={heroImages[currImage].imageAlt}
+            layout="fill"
+            objectFit="cover"
+          />
+        </HeroImageWrap>
       </HeroVideoCol>
     </HeroContainer>
   );

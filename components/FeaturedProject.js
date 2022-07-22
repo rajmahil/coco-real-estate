@@ -13,15 +13,16 @@ import ProjectsComponent from "./ProjectsComponent";
 export const FeaturedContainer = styled.div`
   padding: 90px 75px;
   background: #f8f8f8;
-  background-image: url(${ValueBgOne.src}), url(${ValueBgTwo.src});
+  position: relative;
+  z-index: 0;
+  /* background-image: url(${ValueBgOne.src}), url(${ValueBgTwo.src});
   background-position: 100% 0%, 9% 94%;
   background-size: 290px, 350px;
   background-repeat: no-repeat, no-repeat;
 
   @media screen and (max-width: 1000px) {
     background-size: 200px, 300px;
-  }
-
+  } */
   @media screen and (max-width: 575px) {
     padding: 45px 22px;
   }
@@ -44,10 +45,49 @@ export const ProjectsWrap = styled.div`
   justify-content: space-between;
 `;
 
+const BgImageWrap = styled.div`
+  width: auto;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 350px;
+  z-index: -1;
+
+  @media screen and (max-width: 1250px) {
+    width: 250px;
+  }
+
+  @media screen and (max-width: 575px) {
+    width: 200px;
+  }
+`;
+
+const BgImageWrapTwo = styled.div`
+  width: auto;
+  position: absolute;
+  z-index: 1;
+  left: 0;
+  bottom: 0;
+  width: 350px;
+
+  @media screen and (max-width: 1250px) {
+    width: 250px;
+  }
+  @media screen and (max-width: 575px) {
+    width: 200px;
+  }
+`;
+
 const FeaturedProject = ({ projects }) => {
   console.log(projects);
   return (
     <FeaturedContainer>
+      <BgImageWrap>
+        <Image src={ValueBgOne} />
+      </BgImageWrap>
+      <BgImageWrapTwo>
+        <Image src={ValueBgTwo} />
+      </BgImageWrapTwo>
       <FeaturedWrap>
         <TextWrap>
           <SectionHeading style={{ textAlign: "left" }}>

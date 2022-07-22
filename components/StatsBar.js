@@ -1,22 +1,26 @@
 import styled from "styled-components";
 import StatsBarImage from "../public/Images/StatsBarImage.png";
 import { SectionHeading } from "../styles/global";
+import Image from "next/image";
 
 const StatsBarContainer = styled.div`
+  position: relative;
   padding: 90px 75px;
+  height: 450px;
   display: flex;
   background: linear-gradient(
       180deg,
       rgba(206, 32, 47, 0.74),
       rgba(206, 32, 47, 0.74)
     ),
-    linear-gradient(180deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-    url(${StatsBarImage.src});
+    linear-gradient(180deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+  /* url(${StatsBarImage.src}); */
   background-size: cover;
   background-position: center;
 
   @media screen and (max-width: 925px) {
     padding: 45px 22px;
+    height: 800px;
   }
 `;
 const StatsBarWrap = styled.div`
@@ -65,9 +69,25 @@ const StatsBarHeading = styled.h3`
   margin: 0px;
 `;
 
+const BackImageWrap = styled.div`
+  position: absolute;
+  z-index: -1;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 450px;
+
+  @media screen and (max-width: 925px) {
+    height: 800px;
+  }
+`;
+
 const StatsBar = () => {
   return (
     <StatsBarContainer>
+      <BackImageWrap>
+        <Image src={StatsBarImage} layout="fill" objectFit="cover" />
+      </BackImageWrap>
       <StatsBarWrap>
         <SectionHeading
           style={{

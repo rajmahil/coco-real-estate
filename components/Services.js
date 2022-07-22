@@ -13,10 +13,11 @@ import ValueBgOne from "../public/Images/ValueBgOne.png";
 import ValueBgTwo from "../public/Images/ValueBgTwo.png";
 
 const ValueContainer = styled.div`
+  position: relative;
   background: #ce202f;
-  background-image: url(${ValueBgTwo.src});
+  /* background-image: url(${ValueBgTwo.src});
   background-position: 9% 94%;
-  background-size: 350px;
+  background-size: 350px; */
   background-repeat: no-repeat, no-repeat;
   width: auto;
   padding: 90px 75px;
@@ -40,6 +41,7 @@ const HeadingWrap = styled.div`
 `;
 const ColImage = styled.div`
   width: 60%;
+
   padding-right: 45px;
 
   @media screen and (max-width: 1000px) {
@@ -86,9 +88,36 @@ const ValueHeading = styled.h3`
   margin-top: 10px;
 `;
 
+const BackImageWrap = styled.div`
+  position: absolute;
+  z-index: 0;
+  bottom: 9%;
+  right: 75%;
+  width: 350px;
+
+  @media screen and (max-width: 1450px) {
+    bottom: 20%;
+  }
+
+  @media screen and (max-width: 1290px) {
+    bottom: 30%;
+  }
+
+  @media screen and (max-width: 1200px) {
+    bottom: 40%;
+  }
+
+  @media screen and (max-width: 1000px) {
+    display: none;
+  }
+`;
+
 const Services = () => {
   return (
     <ValueContainer>
+      <BackImageWrap>
+        <Image src={ValueBgTwo} />
+      </BackImageWrap>
       <ValueWrap>
         <HeadingWrap>
           <SectionHeading style={{ color: "#fff" }}>
