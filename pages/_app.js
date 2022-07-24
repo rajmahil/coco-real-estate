@@ -4,10 +4,25 @@ import Head from "next/head";
 import { useState, useEffect } from "react";
 import { useRouter } from "next/router";
 import Script from "next/script";
+import LoadingScreen from "../components/LoadingScreen";
 
 function MyApp({ Component, pageProps }) {
-  const [isOpen, setIsOpen] = useState(false);
   const router = useRouter();
+
+  const [isOpen, setIsOpen] = useState(false);
+  const [pageLoading, setPageLoading] = useState(false);
+  useEffect(() => {
+    const handleStart = () => {
+      setPageLoading(true);
+    };
+    const handleComplete = () => {
+      setPageLoading(false);
+    };
+
+    router.events.on("routeChangeStart", handleStart);
+    router.events.on("routeChangeComplete", handleComplete);
+    router.events.on("routeChangeError", handleComplete);
+  }, [router]);
 
   const toggle = () => {
     setIsOpen(!isOpen);
@@ -30,7 +45,7 @@ function MyApp({ Component, pageProps }) {
                 `}
       </Script>
       <Head>
-        <link rel="stylesheet" href="https://use.typekit.net/dwl6tjb.css" />
+        {/* <link rel="stylesheet" href="https://use.typekit.net/dwl6tjb.css" /> */}
         <meta
           property="og:image"
           content="https://res.cloudinary.com/dmcsstcqf/image/upload/v1653961465/OGImage_er2lnr.png"
@@ -42,7 +57,7 @@ function MyApp({ Component, pageProps }) {
         isOpen={isOpen}
         toggle={toggle}
       >
-        <Component {...pageProps} />
+        {pageLoading ? <LoadingScreen /> : <Component {...pageProps} />}
       </Layout>
     </>
   );

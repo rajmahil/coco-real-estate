@@ -1,9 +1,14 @@
+@font-face {
+  font-family: 'gopher';
+  font-style: normal;
+  src:"https://use.typekit.net/dwl6tjb.css";
+  font-display: swap;
+ }
 html,
 body {
   padding: 0;
   margin: 0;
   font-family: gopher, sans-serif;
-  font-display: swap; 
 }
 
 a {
