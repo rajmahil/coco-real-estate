@@ -7,7 +7,7 @@ import usePremiumStatus from "../stripe/usePremiumStatus";
 import firebase from "../firebase/firebaseClient";
 const Stripe = require("stripe");
 
-const Stripe = ({ customers }) => {
+const StripePage = ({ customers }) => {
   const [user, userLoading] = useAuthState(firebase.auth());
   const userIsPremium = usePremiumStatus(user);
   const [stripeData, setStripeData] = useState();
@@ -45,4 +45,4 @@ export async function getServerSideProps(context) {
   };
 }
 
-export default Stripe;
+export default StripePage;
