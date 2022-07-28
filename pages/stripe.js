@@ -12,7 +12,7 @@ const StripePage = ({ customers }) => {
   const userIsPremium = usePremiumStatus(user);
   const [stripeData, setStripeData] = useState();
 
-  console.log(customers);
+  // console.log(customers);
   console.log(user);
 
   return (
@@ -35,14 +35,14 @@ const StripePage = ({ customers }) => {
   ); //uid: "VnJ9SyJ2rIOTjf697ggwpQokSek1"
 };
 
-export async function getServerSideProps(context) {
-  const stripe = Stripe("sk_test_aC2PGa6gjtxykYeoEHiVKdp20028GNZ29p");
-  const customers = await stripe.customers.list({
-    limit: 30,
-  });
-  return {
-    props: { customers },
-  };
-}
+// export async function getServerSideProps(context) {
+//   const stripe = Stripe("sk_test_aC2PGa6gjtxykYeoEHiVKdp20028GNZ29p");
+//   const customers = await stripe.customers.list({
+//     limit: 30,
+//   });
+//   return {
+//     props: { customers },
+//   };
+// }
 
 export default StripePage;
