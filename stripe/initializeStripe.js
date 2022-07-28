@@ -1,6 +1,6 @@
-import { Stripe, loadStripe } from "@stripe/stripe-js";
+import { loadStripe } from "@stripe/stripe-js";
 
-let stripePromise = Stripe | null;
+let stripePromise;
 
 const initializeStripe = async () => {
   if (!stripePromise) {
