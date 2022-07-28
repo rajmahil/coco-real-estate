@@ -115,14 +115,7 @@ const BackImageWrap = styled.div`
     top: 2%;
   }
   @media screen and (max-width: 750px) {
-    top: 0%;
-    left: 0%;
-  }
-  @media screen and (max-width: 650px) {
-    width: 250px;
-  }
-  @media screen and (max-width: 450px) {
-    width: 200px;
+    display: none;
   }
 `;
 
