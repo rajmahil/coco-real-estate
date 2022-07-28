@@ -32,7 +32,7 @@ const StripePage = ({ customers }) => {
         </div>
       )}
     </div>
-  ); //uid: "VnJ9SyJ2rIOTjf697ggwpQokSek1"
+  );
 };
 
 // export async function getServerSideProps(context) {
