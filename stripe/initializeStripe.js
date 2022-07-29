@@ -1,11 +1,11 @@
-import { loadStripe } from "@stripe/stripe-js";
+import { Stripe, loadStripe } from "@stripe/stripe-js";
 
-let stripePromise;
+let stripePromise = Stripe || null;
 
 const initializeStripe = async () => {
   if (!stripePromise) {
     stripePromise = await loadStripe(
-      "pk_test_ssBc8HcbzPNYPgz8gzOj5jPi00ak8JEzmc"
+      "pk_live_dBmCueKUmT0nfMTklSVUETYG00sdvP75Dt"
     );
   }
   return stripePromise;

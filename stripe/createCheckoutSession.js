@@ -10,7 +10,7 @@ export async function createCheckoutSession(uid) {
     .doc(uid)
     .collection("checkout_sessions")
     .add({
-      price: "price_1LQcMjEGOcrqKu3XF2eWGaos",
+      price: "price_1LR0UbEGOcrqKu3XqnBKszsl",
       success_url: window.location.origin,
       cancel_url: window.location.origin,
     });
@@ -18,6 +18,7 @@ export async function createCheckoutSession(uid) {
   // Wait for the CheckoutSession to get attached by the extension
   checkoutSessionRef.onSnapshot(async (snap) => {
     const { sessionId } = snap.data();
+    console.log(sessionId);
     if (sessionId) {
       // We have a session, let's redirect to Checkout
       // Init Stripe

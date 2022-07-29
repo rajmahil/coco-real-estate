@@ -9,6 +9,7 @@ export default function usePremiumStatus(user) {
     if (user) {
       const checkPremiumStatus = async function () {
         setPremiumStatus(await isUserPremium());
+        console.log(premiumStatus);
       };
       checkPremiumStatus();
     }
