@@ -6,10 +6,9 @@ import { createCheckoutSession } from "../stripe/createCheckoutSession";
 import usePremiumStatus from "../stripe/usePremiumStatus";
 import firebase from "../firebase/firebaseClient";
 
-const StripePage = ({ customers }) => {
+const StripePage = () => {
   const [user, userLoading] = useAuthState(firebase.auth());
   const userIsPremium = usePremiumStatus(user);
-  const [stripeData, setStripeData] = useState();
   const db = firebase.firestore();
   var docRef = db.collection("users").doc(user?.uid);
 
