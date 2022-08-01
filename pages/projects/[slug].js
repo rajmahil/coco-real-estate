@@ -147,17 +147,4 @@ export const getStaticProps = async ({ params }) => {
   };
 };
 
-// export async function getServerSideProps({ params }) {
-//   const res = await fetch(
-//     `https://floating-hollows-19339.herokuapp.com/projects?slug=${params.slug}`
-//   );
-//   const projects = await res.json();
-
-//   return {
-//     props: {
-//       projects,
-//     },
-//   };
-// }
-
 export default ProjectDetails;

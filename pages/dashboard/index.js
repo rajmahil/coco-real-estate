@@ -92,15 +92,4 @@ const Dashboard = ({ customer }) => {
   );
 };
 
-// export async function getServerSideProps(context) {
-//   const Stripe = require("stripe");
-//   const stripe = Stripe("sk_live_SBsuzb6vsbMxEQsJi6FBHE9a00HO94wGwP");
-
-//   const customer = await stripe.customers.retrieve(stripeData.stripeId);
-
-//   return {
-//     props: { customer, data }, // will be passed to the page component as props
-//   };
-// }
-
 export default Dashboard;
