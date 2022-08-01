@@ -72,6 +72,7 @@ const About = ({ isTwo }) => {
                       className="externalLink"
                       href="https://www.google.com/search?q=coco+creative+testimonials&client=firefox-b-d&sxsrf=ALiCzsbgxBucg_MUOCmqqHqyzryXAIQ3Cg%3A1653956776702&ei=qGCVYtCtKuO5uvQPraGKgA8&ved=0ahUKEwjQoZiRvYj4AhXjnI4IHa2QAvAQ4dUDCA0&uact=5&oq=coco+creative+testimonials&gs_lcp=Cgdnd3Mtd2l6EAMyBQghEKABMgUIIRCgAToECAAQRzoECCMQJzoFCAAQkQI6EQguEIAEELEDEIMBEMcBEKMCOgsIABCABBCxAxCDAToRCC4QgAQQsQMQgwEQxwEQ0QM6DgguEIAEELEDEMcBEKMCOgQIABBDOgUIABCABDoLCC4QxwEQrwEQkQI6BwgAELEDEEM6BAguEEM6BwguENQCEEM6CggAELEDEIMBEEM6CAgAEIAEELEDOgsILhCABBDHARCvAToICC4QgAQQsQM6CwguEIAEELEDEIMBOgoILhCxAxCDARBDOgoILhCxAxDUAhBDOg4IABCABBCxAxCDARDJAzoFCAAQkgM6BQguEIAEOgsILhCABBCxAxDUAjoFCAAQsQM6BAgAEAo6BwgAEIAEEAo6CAgAEB4QDRAFOgYIABAeEBY6CAgAEB4QFhAKOggIABCABBDJAzoECCEQFToHCCEQChCgAUoECEEYAEoECEYYAFDFA1j8MWDWMmgJcAJ4AIABjwGIAewekgEEMC4zMpgBAKABAcgBCMABAQ&sclient=gws-wiz#lrd=0x5304f7dbffb27f7b:0xfbf01319eafa5de6,1,,,"
                       target="_blank"
+                      rel="noreferrer"
                     >
                       100% satisfied with our services.
                     </a>{" "}
@@ -148,6 +149,7 @@ const About = ({ isTwo }) => {
                       className="externalLink"
                       href="https://wordpress.com/themes"
                       target="_blank"
+                      rel="noreferrer"
                     >
                       {" "}
                       custom WordPress theme
