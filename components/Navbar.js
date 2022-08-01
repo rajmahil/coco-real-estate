@@ -1,4 +1,3 @@
-import styled from "styled-components";
 import Image from "next/image";
 import CocoCreativeMainLogo from "../public/Images/Coco-Creative-Web-Custom-Web-Design-Saskatoon.png";
 import { useState, useEffect } from "react";
@@ -12,91 +11,6 @@ function getWindowDimensions() {
     return width;
   }
 }
-
-const NavbarContainer = styled.nav`
-  width: 100%;
-  position: fixed;
-  z-index: 1000000;
-  background: ${({ scrollPosition }) =>
-    scrollPosition > 100 ? "rgba(255, 255, 255, 0.8)" : "none"};
-  transition: all 0.3s ease-out;
-  padding: 14px;
-`;
-const NavbarWrap = styled.div`
-  width: auto;
-  max-width: 1600px;
-  margin-left: auto;
-  margin-right: auto;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-`;
-const NavLinksWrap = styled.div`
-  display: flex;
-  width: auto;
-`;
-const MenuButton = styled.div`
-  width: fit-content;
-  padding: 16px 25px;
-  background: ${({ isMenuOpen }) => (isMenuOpen ? "#000" : "#fff")};
-  color: ${({ isMenuOpen }) => (isMenuOpen ? "#fff" : "#000")};
-  cursor: pointer;
-  transition: all 0.3s ease-out;
-  font-size: 1.1em;
-  white-space: nowrap;
-  font-weight: 500;
-  margin-right: 15px;
-
-  &:hover {
-    color: ${({ isMenuOpen }) => (isMenuOpen ? "#fff" : "#ce202f")};
-  }
-`;
-const MenuTopBar = styled.nav`
-  width: 100%;
-  background: #fff;
-  position: fixed;
-  top: ${({ isMenuOpen }) => (isMenuOpen ? "0px" : "-180px")};
-  z-index: 20;
-  height: 180px;
-  border-bottom: 3px #000 solid;
-  transition: all 0.3 ease-in;
-  display: flex;
-  align-items: flex-end;
-
-  @media screen and (max-width: 750px) {
-    height: 80vh;
-    padding-top: 150px;
-    padding-bottom: 25px;
-  }
-`;
-const MobileMenuWrap = styled.div`
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-  margin-left: auto;
-  margin-right: auto;
-  width: 100%;
-  max-width: 1400px;
-  padding: 0px 20px;
-
-  @media screen and (max-width: 750px) {
-    flex-direction: column;
-    height: 100%;
-  }
-`;
-const MenuItem = styled.div`
-  padding: 22px 5px;
-  font-size: 1.2em;
-  font-weight: 500;
-
-  cursor: pointer;
-  transition: all 0.3s ease-in;
-
-  &:hover {
-    color: #ce202f;
-  }
-`;
 
 const MenuVariants = {
   open: { y: 0, transition: { ease: "easeOut", duration: 0.3 } },
@@ -158,9 +72,11 @@ const Navbar = ({ isOpen, toggle }) => {
     <>
       <AnimatePresence initial={false} exitBeforeEnter={true}>
         {isMenuOpen && (
-          <MenuTopBar
+          <motion.div
+            className={`w-full bg-white fixed ${
+              isMenuOpen ? "top-0" : "top-[-180px]"
+            } z-[20] 750:h-[180px] h-[80vh] border-b-[3px] border-black flex items-end 750:p-0 pt-[150px] pb-[25px] `}
             isMenuOpen={isMenuOpen}
-            as={motion.div}
             variants={
               windowDimensions > 750 ? MenuVariants : MobileMenuVariants
             }
@@ -168,28 +84,40 @@ const Navbar = ({ isOpen, toggle }) => {
             animate={isMenuOpen ? "open" : "closed"}
             exit="exit"
           >
-            <MobileMenuWrap>
+            <div className="flex 750:flex-row flex-col items-center justify-between ml-auto mr-auto w-full max-w-[1400px] py-0 px-[20px] 750:h-auto h-full ">
               <Link passHref href="/about">
-                <MenuItem onClick={menuToggle}>About</MenuItem>
+                <div className="menuItem" onClick={menuToggle}>
+                  About
+                </div>
               </Link>
               <Link passHref href="/services">
-                <MenuItem onClick={menuToggle}>Services</MenuItem>
+                <div className="menuItem" onClick={menuToggle}>
+                  Services
+                </div>
               </Link>
               <Link passHref href="/projects">
-                <MenuItem onClick={menuToggle}>Portfolio</MenuItem>
+                <div className="menuItem" onClick={menuToggle}>
+                  Portfolio
+                </div>
               </Link>
               <Link passHref href="/contact">
-                <MenuItem onClick={menuToggle}>Contact Us</MenuItem>
+                <div className="menuItem" onClick={menuToggle}>
+                  Contact Us
+                </div>
               </Link>
-            </MobileMenuWrap>
-          </MenuTopBar>
+            </div>
+          </motion.div>
         )}
       </AnimatePresence>
-
-      <NavbarContainer scrollPosition={scrollPosition}>
-        <NavbarWrap>
+      <div
+        className={`w-full fixed z-[100000] ${
+          scrollPosition > 100 ? "bg-[rgba(255,255,255,0.8)]" : "none"
+        } transition-all p-[14px]`}
+        scrollPosition={scrollPosition}
+      >
+        <div className="w-auto max-w-[1600px] ml-auto mr-auto flex items-center justify-between">
           <Link href="/" passhref>
-            <div style={{ cursor: "pointer" }}>
+            <div className="cursor-pointer">
               {scrollPosition < 100 ? (
                 <Image
                   src={CocoCreativeMainLogo}
@@ -207,16 +135,26 @@ const Navbar = ({ isOpen, toggle }) => {
               )}
             </div>
           </Link>
-          <NavLinksWrap>
+          <div className="flex w-auto">
             <div onClick={menuToggle}>
-              <MenuButton isMenuOpen={isMenuOpen}>Menu</MenuButton>
+              <div
+                className={`w-fit py-[16px] px-[25px] ${
+                  isMenuOpen ? "bg-black" : "bg-white"
+                } ${
+                  isMenuOpen ? "text-white" : "text-black"
+                } cursor-pointer transition-all text-[1.1em] whitespace-nowrap font-medium mr-[15px] hover:${
+                  isMenuOpen ? "text-white" : "text-red"
+                }`}
+              >
+                Menu
+              </div>
             </div>
             <div onClick={toggle}>
               {windowDimensions > 750 && <MainButton text="Get A Quote" />}
             </div>
-          </NavLinksWrap>
-        </NavbarWrap>
-      </NavbarContainer>
+          </div>
+        </div>
+      </div>
     </>
   );
 };

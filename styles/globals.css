@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 @font-face {
   font-family: 'gopher';
   font-style: normal;
@@ -18,5 +22,124 @@ a {
 
 * {
   box-sizing: border-box;
+}
+
+
+
+@layer components {
+
+  .globalButton {
+    @apply w-fit py-[14px] px-[22px] 500:py-[16px] 500:px-[25px] bg-red text-white cursor-pointer transition-all text-[1em] 500:text-[1.1em] font-medium border-2 border-red hover:bg-black hover:border-2 hover:border-black
+  }
+  .secGlobalButton {
+     @apply w-fit py-[14px] px-[22px] 500:py-[16px] 500:px-[25px]  text-black cursor-pointer transition-all text-[1em] 500:text-[1.1em] font-medium border-2 border-black hover:bg-black hover:text-white ml-3
+  }
+
+  .sponsorGridWrap {
+    @apply w-full flex flex-col items-center 1090:items-start justify-center
+  }
+
+  .sponsorImageWrap {
+    @apply w-[50%]
+  }
+  .sectionHeading {
+    @apply text-[2em] 630:text-[2.4em] leading-[40px] 630:leading-[55px] font-extrabold text-left mb-0 mt-0 mr-auto
+  }
+
+  .sectionParagraph {
+    @apply text-[#4f4f4f] leading-[26px] text-[1em] font-light mt-[5px]
+  }
+
+  .containerHeading {
+    @apply text-[1.4em] mt-0 mb-[5px]
+  }
+
+
+  .aboutColWrap {
+    @apply w-full 550:w-[12%]
+  }
+
+  .aboutIconWrap {
+    @apply text-[2.8em] 550:text-[3em] text-red pt-2
+  }
+
+  .contentContainer {
+    @apply w-auto flex mt-[24px] flex-col 550:flex-row
+  }
+
+  .contentTextContainer {
+    @apply w-full 550:w-[88%] pl-0 550:pl-[10px]
+  }
+
+  .externalLink {
+    @apply underline cursor-pointer
+  }
+  .servicesCol {
+    @apply p-[10px] 500:p-[15px] border-b-[1px] border-dashed border-black text-white 
+  }
+
+  .servicesTextNum {
+    @apply text-white text-[4em] leading-[50px] font-black mt-2
+  }
+
+  .servicesHeading {
+    @apply text-[1.8em] mb-0 mt-[10px] font-bold
+  }
+
+  .statsBarGrid {
+    @apply 925:w-[32%] w-full p-[24px] flex flex-col items-center
+  }
+
+  .statsBarNumber {
+    @apply text-white text-[5em] 500:text-[7em] leading-[100px] 500:leading-[120px] font-extrabold
+  }
+
+  .statsBarHeading {
+    @apply text-white text-[1.4em] font-bold text-center m-0
+  }
+
+  .footerCols {
+    @apply w-full 975:w-[33.1%] text-white pl-[12px] flex flex-col 975:justify-start justify-center 975:items-start items-center 975:m-0 my-[24px]  p-0 
+  }
+  
+  .footerHeading {
+    @apply text-[1.4em] text-white font-bold mt-0
+  }
+
+  .footerLinks {
+    @apply text-white opacity-50 py-[20px] px-0 cursor-pointer transition-all hover:opacity-100
+  }
+
+  .menuItem {
+    @apply py-[22px] px-[5px] text-[1.2em] cursor-pointer transition-all hover:text-red
+  }
+
+  .contactFormInput {
+    @apply w-full 600:mb-[16px] mb-[10px] p-[12px] 600:p-[16px] border-none  bg-[#f2f2f2]  
+  }
+
+  .timeOption {
+    @apply w-full mb-[10px] 600:mb-[16px] p-[12px] 600:p-[16px] border-none bg-[#f2f2f2] text-black cursor-pointer 
+  }
+  .cardsWrap {
+    @apply py-[25px] px-0 border-b-[1px] border-white border-dashed
+  }
+  .iconWrap {
+    @apply text-white text-[4em] leading-[10px]
+  }
+  .processColContainer {
+    @apply w-full flex mb-[60px] 800:flex-row flex-col-reverse
+  }
+  .processColLeft {
+    @apply w-full 800:w-[50%] flex flex-col items-start justify-center
+  }
+  .processColRight {
+    @apply w-full 800:w-[50%] 800:pl-[45px] p-0 flex flex-col items-start justify-center
+  }
+  .processNumber {
+    @apply text-[4em] text-[#c5c5c5] font-extrabold leading-[45px]
+  }
+
+
 }
 

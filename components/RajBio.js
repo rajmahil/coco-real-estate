@@ -1,141 +1,26 @@
 import React from "react";
 import Image from "next/image";
-import styled from "styled-components";
 import bioBackground from "../public/Images/bioBackground.png";
 import rajMahilImage from "../public/Images/rajMahilImage.png";
 import RajMahilSignature from "../public/Images/RajMahilSignature.png";
-import {
-  Paragraph,
-  ParaTextSpan,
-  RedTextSpan,
-  SectionHeading,
-} from "../styles/global";
-
-const BioContainer = styled.div`
-  padding: 90px 75px;
-  position: relative;
-  /* background-image: url(${bioBackground.src});
-  background-repeat: no-repeat;
-  background-position: 15% 20%;
-  background-size: 390px; */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  @media screen and (max-width: 1680px) {
-    background-position: 8% 20%;
-  }
-  @media screen and (max-width: 1450px) {
-    background-position: 3% 20%;
-  }
-  @media screen and (max-width: 1250px) {
-    background-position: 3% 3%;
-  }
-  @media screen and (max-width: 750px) {
-    background: none;
-    padding: 45px 26px;
-  }
-`;
-
-const BioWrap = styled.div`
-  width: 100%;
-  max-width: 1240px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  @media screen and (max-width: 1250px) {
-    flex-direction: column;
-  }
-`;
-
-const ColImage = styled.div`
-  width: 55%;
-  display: flex;
-  margin-right: 75px;
-  max-width: 650px;
-  overflow: hidden;
-
-  @media screen and (max-width: 1250px) {
-    width: 100%;
-    margin-right: auto;
-  }
-`;
-
-const ColText = styled.div`
-  width: 45%;
-  @media screen and (max-width: 1250px) {
-    width: 100%;
-    margin-top: 45px;
-  }
-`;
-
-const RajMahilImage = styled.div`
-  width: 100%;
-  height: 700px;
-  position: relative;
-
-  @media screen and (max-width: 650px) {
-    height: 500px;
-  }
-  @media screen and (max-width: 450px) {
-    height: 400px;
-  }
-  @media screen and (max-width: 375px) {
-    height: 350px;
-  }
-`;
-
-const RajMahilText = styled.h3`
-  font-size: 1.4em;
-  margin-top: 10px;
-  margin-bottom: 0px;
-  line-height: 10px;
-`;
-
-const BackImageWrap = styled.div`
-  position: absolute;
-  z-index: -1;
-  top: 8%;
-  left: 12%;
-  width: 350px;
-
-  @media screen and (max-width: 1700px) {
-    left: 8%;
-  }
-
-  @media screen and (max-width: 1570px) {
-    left: 5%;
-  }
-
-  @media screen and (max-width: 1420px) {
-    left: 2%;
-  }
-  @media screen and (max-width: 1250px) {
-    top: 2%;
-  }
-  @media screen and (max-width: 750px) {
-    display: none;
-  }
-`;
 
 const RajBio = () => {
   return (
-    <BioContainer>
-      <BackImageWrap>
+    <div className="py-[45px] px-[26px] 750:py-[90px] 750:px-[75px] relative flex items-center justify-center ">
+      <div className="absolute z-[-1] top-[8%] 1700:left-[12%] left-[8%] w-[350px]">
         <Image src={bioBackground} />
-      </BackImageWrap>
-      <BioWrap>
-        <ColImage>
-          <RajMahilImage>
+      </div>
+      <div className="w-full max-w-[1240px] flex items-center justify-center 1250:flex-row flex-col">
+        <div className="1250:w-full w-[55%] flex mr-auto 1250:mr-[75px] max-w-[650px] overflow-hidden ">
+          <div className="w-full relative 650:h-[700px] 450:h-[500px] 375:h-[400px] h-[350px]">
             <Image src={rajMahilImage} layout="fill" objectFit="contain" />
-          </RajMahilImage>
-        </ColImage>
-        <ColText>
-          <SectionHeading>
-            Passion meets <RedTextSpan>expertise</RedTextSpan>.
-          </SectionHeading>{" "}
-          <Paragraph>
+          </div>
+        </div>
+        <div className="1250:w-[45%] w-full 1250:mt-0 mt-[45px]">
+          <h2 className="sectionHeading">
+            Passion meets <span className="text-red">expertise</span>.
+          </h2>{" "}
+          <p className="sectionParagraph">
             I started Coco Creative 5 years ago intending to level the playing
             field for local construction businesses. As the digital revolution
             continues, many small businesses struggle to keep pace. Oftentimes,
@@ -145,23 +30,25 @@ const RajBio = () => {
             often don&apos;t know who to trust, what to do, or where to start.{" "}
             <br />
             <br /> At Coco Creative,
-            <ParaTextSpan>
+            <span className="font-bold text-black">
               {" "}
               our goal is to equip local businesses with tools to help level the
               playing field against bigger businesses. We believe in an
               authentic and human approach to customer service. Our experts will
               lay out a clear plan specifically for your business to achieve
               desired results.
-            </ParaTextSpan>
+            </span>
             <br />
             <br /> I look forward to working with your business.
-          </Paragraph>
+          </p>
           <Image src={RajMahilSignature} alt="Raj Mahil Signature" />
-          <RajMahilText>Raj Mahil</RajMahilText>
-          <Paragraph>Founder & CEO</Paragraph>
-        </ColText>
-      </BioWrap>
-    </BioContainer>
+          <h3 className="text-[1.4em] mt-[10px] mb-0 leading-[10px]">
+            Raj Mahil
+          </h3>
+          <p className="sectionParagraph">Founder & CEO</p>
+        </div>
+      </div>
+    </div>
   );
 };
 

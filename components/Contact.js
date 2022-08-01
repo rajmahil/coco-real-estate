@@ -1,43 +1,7 @@
 import React, { useContext } from "react";
-import styled from "styled-components";
 import { IoCloseSharp } from "react-icons/io5";
 import { motion, AnimatePresence } from "framer-motion";
 import ContactForm from "./ContactForm";
-
-const ContactScreen = styled.div`
-  width: 100%;
-  height: 100vh;
-  background: rgba(0, 0, 0, 0.7);
-  z-index: 1000000000;
-  position: fixed;
-  top: 0;
-  display: ${({ isMenuOpen }) => (isMenuOpen ? "flex" : "none")};
-  justify-content: flex-end;
-`;
-
-const ContactContainer = styled.div`
-  background: #fff;
-  width: 50%;
-  height: 100%;
-
-  @media screen and (max-width: 1090px) {
-    width: 100%;
-  }
-`;
-const IconWrapper = styled.div`
-  padding: 10px;
-  position: absolute;
-  top: 0;
-  right: 0;
-  font-size: 4em;
-  cursor: pointer;
-  margin: 25px;
-  transition: all 0.3s ease-out;
-
-  &:hover {
-    color: #ce202f;
-  }
-`;
 
 const OverlayVariants = {
   open: { opacity: 1, transition: { ease: "easeOut", duration: 0.3 } },
@@ -63,27 +27,31 @@ const Contact = ({ isOpen, toggle }) => {
   return (
     <AnimatePresence initial={false} exitBeforeEnter={true}>
       {isOpen && (
-        <ContactScreen
-          isMenuOpen={isOpen}
-          as={motion.div}
+        <motion.div
+          className={`w-full h-screen bg-[rgba(0,0,0,0.7)] z-[10000000] fixed top-0 justify-end ${
+            isOpen ? "flex" : "none"
+          }`}
           variants={OverlayVariants}
           initial="closed"
           animate={isOpen ? "open" : "closed"}
           exit="exit"
         >
-          <ContactContainer
-            as={motion.div}
+          <motion.div
+            className="bg-white 1090:w-[50%] h-full w-full"
             variants={MenuVariants}
             initial="closed"
             animate={isOpen ? "open" : "closed"}
             exit="exit"
           >
-            <IconWrapper onClick={toggle}>
+            <div
+              className="p-[10px] absolute top-0 right-0 text-[4em] cursor-pointer m-[25px] transition-all hover:text-red"
+              onClick={toggle}
+            >
               <IoCloseSharp />
-            </IconWrapper>
+            </div>
             <ContactForm />
-          </ContactContainer>
-        </ContactScreen>
+          </motion.div>
+        </motion.div>
       )}
     </AnimatePresence>
   );

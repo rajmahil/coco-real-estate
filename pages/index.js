@@ -1,14 +1,9 @@
-import styles from "../styles/Home.module.css";
-import styled from "styled-components";
 import Hero from "../components/Hero";
 import SponsorsBanner from "../components/SponsorsBanner";
 import About from "../components/About";
 import Services from "../components/Services";
 import StatsBar from "../components/StatsBar";
 import Testimonials from "../components/Testimonials";
-import MainCallToAction from "../components/MainCallToAction";
-import Contact from "../components/Contact";
-import { useState } from "react";
 import FeaturedProject from "../components/FeaturedProject";
 import Faq from "../components/Faq";
 import Head from "next/head";

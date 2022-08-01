@@ -1,34 +1,12 @@
 import React from "react";
-import styled from "styled-components";
-
-const LoadingScreenWrap = styled.div`
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100vh;
-  z-index: 10000;
-  background: #fff;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-`;
-
-const LoadingHeading = styled.h1`
-  font-size: 4em;
-  text-transform: uppercase;
-  font-weight: 800;
-
-  @media screen and (max-width: 420px) {
-    font-size: 3em;
-  }
-`;
 
 const LoadingScreen = () => {
   return (
-    <LoadingScreenWrap>
-      <LoadingHeading>Loading...</LoadingHeading>
-    </LoadingScreenWrap>
+    <div className="fixed top-0 left-0 w-full h-screen z-[10000] bg-white flex items-center justify-center">
+      <h1 className="420:text-[4em] text-[3em] uppercase font-extrabold">
+        Loading...
+      </h1>
+    </div>
   );
 };
 

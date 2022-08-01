@@ -1,16 +1,7 @@
 import React from "react";
 import PageHeader from "../../components/PageHeader";
 import ProjectsComponent from "../../components/ProjectsComponent";
-import styled from "styled-components";
-import { ProjectsWrap } from "../../components/FeaturedProject";
 import Head from "next/head";
-
-const PageWrap = styled.div`
-  max-width: 1400px;
-  margin-left: auto;
-  margin-right: auto;
-  padding: 90px 26px;
-`;
 
 const ProjectPage = ({ projects }) => {
   return (
@@ -37,8 +28,8 @@ const ProjectPage = ({ projects }) => {
         textSpan="Portfolio"
         paragraph="Here is a look into our latest projects!"
       />
-      <PageWrap>
-        <ProjectsWrap>
+      <div className="max-w-[1400px] ml-auto mr-auto py-[90px] px-[26px]">
+        <div className="mt-[40px] flex flex-wrap justify-between">
           {projects.map((project) => (
             <ProjectsComponent
               key={project.id}
@@ -50,8 +41,8 @@ const ProjectPage = ({ projects }) => {
               tags={project.project_tags}
             />
           ))}
-        </ProjectsWrap>
-      </PageWrap>
+        </div>
+      </div>
     </>
   );
 };

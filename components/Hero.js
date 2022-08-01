@@ -1,6 +1,5 @@
 import Link from "next/link";
 import { useState, useEffect } from "react";
-import styled from "styled-components";
 import heroVidOverlay from "../public/Images/heroVidOverlay.png";
 import Image from "next/image";
 import HeroImage1 from "../public/Images/HeroImages/heroImage1.png";
@@ -8,96 +7,6 @@ import HeroImage2 from "../public/Images/HeroImages/heroImage2.png";
 import HeroImage3 from "../public/Images/HeroImages/heroImage3.png";
 import HeroImage4 from "../public/Images/HeroImages/heroImage4.png";
 import HeroImage5 from "../public/Images/HeroImages/heroImage5.png";
-import {
-  GlobalButton,
-  Paragraph,
-  ParaTextSpan,
-  RedTextSpan,
-  SecGlobalButton,
-} from "../styles/global";
-
-const HeroContainer = styled.div`
-  width: auto;
-  height: 88vh;
-  display: flex;
-
-  @media screen and (max-width: 1000px) {
-    flex-direction: column;
-    height: auto;
-  }
-`;
-const HeroVideoCol = styled.div`
-  width: 45%;
-  height: 100%;
-  overflow: hidden;
-  position: relative;
-
-  @media screen and (max-width: 1000px) {
-    width: 100%;
-    height: 500px;
-  }
-`;
-const HeroColumnText = styled.div`
-  width: 55%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding-left: 12px;
-
-  @media screen and (max-width: 1000px) {
-    width: 100%;
-    padding: 150px 12px 25px 12px;
-  }
-`;
-const TextWrap = styled.div`
-  width: auto;
-  max-width: 720px;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-`;
-const MainHeading = styled.h1`
-  width: auto;
-  line-height: 60px;
-  font-size: 3em;
-  font-weight: 800;
-  margin: 0px;
-
-  @media screen and (max-width: 500px) {
-    font-size: 2em;
-    line-height: 50px;
-  }
-`;
-
-const HeroVideo = styled.video`
-  object-fit: cover;
-  width: 100%;
-  height: 100%;
-  z-index: -1;
-`;
-const HeroVidOverlay = styled.div`
-  /* background-image: url(${(props) => props.image.src}); */
-  z-index: 10;
-  width: 100%;
-  height: 88vh;
-  position: absolute;
-`;
-const ButtonWrap = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-`;
-
-const HeroImageWrap = styled.div`
-  width: auto;
-  position: relative;
-  height: 88vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-`;
 
 const Hero = () => {
   const [currentWord, setCurrentWord] = useState(0);
@@ -137,52 +46,52 @@ const Hero = () => {
   });
 
   return (
-    <HeroContainer>
-      <HeroColumnText>
-        <TextWrap>
-          <MainHeading>
+    <div className="w-auto h-auto 1000:h-[88vh] flex 1000:flex-row flex-col">
+      <div className="w-full 1000:w-[55%] h-full flex flex-col items-center justify-center pt-[150px] pr-[12px] pb-[25px]  1000:p-0  pl-[12px]">
+        <div className="pl-2 w-auto max-w-[720px] flex flex-col justify-start">
+          <h1 className="w-auto leading-[50px] 500:leading-[60px] text-[2em] 500:text-[3em] font-black m-0 ">
             Grow your business with{" "}
-            <RedTextSpan>{HeroWords[currentWord]}</RedTextSpan> web design.
-          </MainHeading>
-          <Paragraph
-            passHref
-            style={{ marginBottom: "28px", maxWidth: "600px" }}
-          >
+            <span className="text-[#ce202f]">{HeroWords[currentWord]}</span> web
+            design.
+          </h1>
+          <p className="text-[#4f4f4f] leading-[30px] text-[1em] 500:text-[1.1em] mt-2 font-regular max-w-[600px] mb-[28px]">
             Coco Creative is a modern web design agency located in Saskatoon,
             SK. We build stunning custom websites that boost revenue by
             generating quality leads, helping you stand above the competition.{" "}
-            <ParaTextSpan>Ready to grow your business?</ParaTextSpan>
-          </Paragraph>
-          <ButtonWrap>
+            <span className="font-bold text-black">
+              Ready to grow your business?
+            </span>
+          </p>
+          <div className="flex flex-wrap items-center">
             <Link href="/contact" passHref>
-              <GlobalButton>Get A Quote</GlobalButton>
+              <div className="globalButton">Get A Quote</div>
             </Link>
             <Link href="/projects" passHref>
-              <SecGlobalButton>View Portfolio</SecGlobalButton>
+              <div className="secGlobalButton">View Portfolio</div>
             </Link>
-          </ButtonWrap>
-        </TextWrap>
-      </HeroColumnText>
-      <HeroVideoCol>
-        <HeroVidOverlay image={heroVidOverlay}>
+          </div>
+        </div>
+      </div>
+      <div className="w-full h-[500px] 1000:w-[45%] 1000:h-full overflow-hidden relative ">
+        <div className="z-10 w-full h-[88vh] absolute">
           <Image src={heroVidOverlay} layout="fill" objectFit="cover" />
-        </HeroVidOverlay>
+        </div>
         {/* <HeroVideo loop autoPlay muted>
           <source
             src="https://res.cloudinary.com/dkmlwbskl/video/upload/v1653597789/heroVideo_ekqtwg.mp4"
             type="video/mp4"
           />
         </HeroVideo> */}
-        <HeroImageWrap>
+        <div className="w-auto relative h-[88vh] flex items-center justify-center">
           <Image
             src={heroImages[currImage].imageUrl}
             alt={heroImages[currImage].imageAlt}
             layout="fill"
             objectFit="cover"
           />
-        </HeroImageWrap>
-      </HeroVideoCol>
-    </HeroContainer>
+        </div>
+      </div>
+    </div>
   );
 };
 

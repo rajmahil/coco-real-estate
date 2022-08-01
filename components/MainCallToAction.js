@@ -1,68 +1,25 @@
-import styled from "styled-components";
-import { SectionHeading, Paragraph, SecGlobalButton } from "../styles/global";
 import Link from "next/link";
-
-const CtaContainer = styled.div`
-  padding: 20px;
-
-  @media screen and (max-width: 700px) {
-    padding: 10px;
-  }
-`;
-const CtaWrap = styled.div`
-  background: #c21e2c;
-  padding: 90px 75px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  @media screen and (max-width: 700px) {
-    padding: 45px 22px;
-  }
-`;
-const CtaContentWrap = styled.div`
-  max-width: 1400px;
-  color: #fff;
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-
-  @media screen and (max-width: 975px) {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-`;
-const TextWrap = styled.div`
-  color: #fff;
-  max-width: 520px;
-
-  @media screen and (max-width: 975px) {
-    text-align: left;
-  }
-`;
 
 const MainCallToAction = () => {
   return (
-    <CtaContainer>
-      <CtaWrap>
-        <CtaContentWrap>
-          <TextWrap>
-            <SectionHeading>Ready to get started? </SectionHeading>
-            <Paragraph style={{ color: "#fff", marginTop: "5px" }}>
+    <div className="p-[20px] 700:p-[20px]">
+      <div className="bg-red flex items-center justify-center py-[45px] px-[22px] 700:py-[90px] 700:px-[75px] ">
+        <div className="max-w-[1400px] text-white w-full flex flex-col 975:flex-row items-start 975:items-center justify-between">
+          <div className="text-white max-w-[520px] text-left">
+            <h2 className="sectionHeading">Ready to get started? </h2>
+            <p className="sectionParagraph text-white ">
               Let&apos;s discuss your project. We promise to respond within 24
               hours!
-            </Paragraph>
-          </TextWrap>
+            </p>
+          </div>
           <Link href="/contact" passHref>
-            <SecGlobalButton white={true}>
+            <div className="secGlobalButton border-white text-white hover:border-black">
               Let&apos;s Get in Touch!
-            </SecGlobalButton>
+            </div>
           </Link>
-        </CtaContentWrap>
-      </CtaWrap>
-    </CtaContainer>
+        </div>
+      </div>
+    </div>
   );
 };
 

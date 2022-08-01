@@ -1,43 +1,23 @@
 import React, { useState } from "react";
-import styled from "styled-components";
 import Link from "next/link";
-
-const ProjectsWrap = styled.div`
-  width: auto;
-  margin-top: 90px;
-  text-transform: uppercase;
-  font-size: 1.8em;
-  font-weight: 800;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  cursor: pointer;
-  text-align: center;
-
-  @media screen and (max-width: 375px) {
-    font-size: 1.5em;
-  }
-`;
-
-const Line = styled.div`
-  width: ${({ isHover }) => (isHover ? "100%" : "20%")};
-  height: 5px;
-  background: #000;
-  margin-top: 5px;
-  transition: all 0.3s ease-out;
-`;
 
 const ViewAllProjects = () => {
   const [isHover, setIsHover] = useState(false);
 
   return (
     <Link passHref href="/projects">
-      <ProjectsWrap
+      <div
+        className="w-auto mt-[90px] uppercase text-[1.5em] 375:text-[1.8em] font-extrabold flex flex-col items-center cursor-pointer text-center"
         onMouseEnter={() => setIsHover(true)}
         onMouseLeave={() => setIsHover(false)}
       >
-        View All Projects <Line isHover={isHover} />
-      </ProjectsWrap>
+        View All Projects{" "}
+        <div
+          className={`${
+            isHover ? "w-full" : "w-[20%]"
+          } h-[5px] bg-black mt-[5px] transition-all`}
+        />
+      </div>
     </Link>
   );
 };

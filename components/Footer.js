@@ -1,107 +1,7 @@
-import styled from "styled-components";
 import Image from "next/image";
 import Link from "next/link";
 import cocoCreativeLogo from "../public/Images/CocoCreativeLogo.png";
 import { useState, useEffect } from "react";
-import { Paragraph } from "../styles/global";
-
-const FooterContainer = styled.footer`
-  width: auto;
-  background: #000;
-  padding: 75px 75px 40px 75px;
-
-  @media screen and (max-width: 975px) {
-    padding: 45px 22px;
-  }
-`;
-const FooterWrap = styled.div`
-  max-width: 1400px;
-  margin-left: auto;
-  margin-right: auto;
-  display: flex;
-  padding-bottom: 45px;
-  border-bottom: 1px #fff solid;
-  margin-bottom: 25px;
-
-  @media screen and (max-width: 975px) {
-    flex-direction: column;
-  }
-`;
-const FooterColLogo = styled.div`
-  width: 35%;
-
-  @media screen and (max-width: 975px) {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-`;
-const FooterColLinks = styled.div`
-  width: 65%;
-  display: flex;
-
-  @media screen and (max-width: 975px) {
-    width: 100%;
-    flex-direction: column;
-  }
-`;
-const FooterCols = styled.div`
-  width: 33.1%;
-  color: #fff;
-  padding-left: 12px;
-  display: flex;
-  flex-direction: column;
-
-  @media screen and (max-width: 975px) {
-    width: 100%;
-    justify-content: center;
-    align-items: center;
-    margin: 24px 0px;
-    padding: 0px;
-  }
-`;
-const FooterHeading = styled.h3`
-  font-size: 1.4em;
-  color: #fff;
-  font-weight: 700;
-  margin-top: 0px;
-`;
-const ImageWrap = styled.div`
-  width: 275px;
-`;
-const CopyrightWrap = styled.div`
-  width: auto;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-`;
-const CopyrightText = styled.text`
-  font-size: 1em;
-  color: #fff;
-  margin-top: 0px;
-  margin-left: auto;
-  margin-right: auto;
-  text-align: center;
-`;
-const FooterLinks = styled.text`
-  color: #fff;
-  opacity: 0.5;
-  padding: 20px 0px;
-  cursor: pointer;
-  transition: all 0.3s ease-out;
-
-  &:hover {
-    opacity: 1;
-  }
-`;
-const FooterDescription = styled.p`
-  width: auto;
-  color: #fff;
-  opacity: 0.5;
-  max-width: 350px;
-  line-height: 25px;
-`;
 
 const Footer = () => {
   const [curDate, setCurDate] = useState();
@@ -111,57 +11,57 @@ const Footer = () => {
     setCurDate(currentTime.getFullYear());
   }, []);
   return (
-    <FooterContainer>
-      <FooterWrap>
-        <FooterColLogo>
-          <ImageWrap>
+    <div className="w-auto bg-black px-[22px] py-[45px]  975:px-[75px] 975:pt-[75px] 975:pb-[40px]">
+      <div className="max-w-[1400px] ml-auto mr-auto flex pb-[45px] border-b-[1px] border-white mb-[25px] 975:flex-row flex-col">
+        <div className="w-full 975:w-[35%] 975:block flex items-center justify-center">
+          <div className="w-[275px]">
             <Image
               src={cocoCreativeLogo}
               alt="Coco Creative logo - custom website design Saskatoon"
             />
-          </ImageWrap>
-        </FooterColLogo>
-        <FooterColLinks>
-          <FooterCols>
-            <FooterHeading>Quick Links</FooterHeading>
+          </div>
+        </div>
+        <div className="975:w-[65%] w-full flex 975:flex-row flex-col">
+          <div className="footerCols">
+            <h3 className="footerHeading">Quick Links</h3>
             <Link href="/" passHref>
-              <FooterLinks>Home</FooterLinks>
+              <div className="footerLinks">Home</div>
             </Link>
             <Link href="/about" passHref>
-              <FooterLinks>About Us</FooterLinks>
+              <div className="footerLinks">About Us</div>
             </Link>
             <Link href="/portfolio" passHref>
-              <FooterLinks>Portfolio</FooterLinks>
+              <div className="footerLinks">Portfolio</div>
             </Link>
             <Link href="/services" passHref>
-              <FooterLinks>Services</FooterLinks>
+              <div className="footerLinks">Services</div>
             </Link>
             <Link href="/contact" passHref>
-              <FooterLinks>Contact Us</FooterLinks>
+              <div className="footerLinks">Contact Us</div>
             </Link>
-          </FooterCols>
-          <FooterCols>
-            <FooterHeading>Follow Us</FooterHeading>
-            <FooterLinks>Facebook</FooterLinks>
-            <FooterLinks>Instagram</FooterLinks>
-          </FooterCols>
-          <FooterCols>
-            <FooterHeading>Contact Us</FooterHeading>
+          </div>
+          <div className="footerCols">
+            <h3 className="footerHeading">Follow Us</h3>
+            <div className="footerLinks">Facebook</div>
+            <div className="footerLinks">Instagram</div>
+          </div>
+          <div className="footerCols">
+            <h3 className="footerHeading">Contact Us</h3>
             <Link href="mailto:info@cococreativeweb.com" passHref>
-              <FooterLinks>Em: info@cococreativeweb.com</FooterLinks>
+              <div className="footerLinks">Em: info@cococreativeweb.com</div>
             </Link>
             <Link href="tel:306-716-3130" passHref>
-              <FooterLinks>Ph: 306-716-3130</FooterLinks>
+              <div className="footerLinks">Ph: 306-716-3130</div>
             </Link>
-          </FooterCols>
-        </FooterColLinks>
-      </FooterWrap>
-      <CopyrightWrap>
-        <CopyrightText>
+          </div>
+        </div>
+      </div>
+      <div className="w-auto flex items-center justify-center">
+        <div className="text-[1em] text-white mt-0 ml-auto mr-auto text-center">
           Copyright © {curDate} Coco Creative. All Rights Reserved.
-        </CopyrightText>
-      </CopyrightWrap>
-    </FooterContainer>
+        </div>
+      </div>
+    </div>
   );
 };
 

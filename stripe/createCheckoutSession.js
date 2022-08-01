@@ -1,8 +1,10 @@
 import firebase from "../firebase/firebaseClient";
 import initializeStripe from "./initializeStripe";
 
-export async function createCheckoutSession(uid) {
+export async function createCheckoutSession(uid, stripeId) {
   const firestore = firebase.firestore();
+  const db = firebase.firestore();
+  var docRef = db.collection("users").doc(uid);
 
   // Create a new checkout session in the subollection inside this users document
   const checkoutSessionRef = await firestore
@@ -11,14 +13,14 @@ export async function createCheckoutSession(uid) {
     .collection("checkout_sessions")
     .add({
       price: "price_1LR0UbEGOcrqKu3XqnBKszsl",
-      success_url: window.location.origin,
+      success_url: `${window.location.origin}/dashboard`,
       cancel_url: window.location.origin,
     });
 
   // Wait for the CheckoutSession to get attached by the extension
   checkoutSessionRef.onSnapshot(async (snap) => {
     const { sessionId } = snap.data();
-    console.log(sessionId);
+
     if (sessionId) {
       // We have a session, let's redirect to Checkout
       // Init Stripe

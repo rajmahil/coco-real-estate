@@ -1,6 +1,4 @@
-import styled from "styled-components";
 import AboutBgPattern from "../public/Images/AboutBgPattern.png";
-import AboutBgPatternTwo from "../public/Images/AboutBgPatternTwo.png";
 import SolutionImage from "../public/Images/custom-web-desing-saskatoon-coco-creative.png";
 import YKTSImage from "../public/Images/Custom-Wordpress-and-Ecommerce-websites-Saskatoon.png";
 import Image from "next/image";
@@ -13,170 +11,29 @@ import {
   FaBolt,
   FaSearchDollar,
 } from "react-icons/fa";
-import {
-  ExternalLink,
-  InternalLink,
-  Paragraph,
-  ParaTextSpan,
-  RedTextSpan,
-  SectionHeading,
-} from "../styles/global";
-
-const AboutContainer = styled.div`
-  width: auto;
-  padding: 90px 75px;
-  /* background: ${({ isTwo }) =>
-    isTwo ? `url(${AboutBgPatternTwo.src})` : `url(${AboutBgPattern.src})`};
-  background-repeat: no-repeat;
-  background-size: 500px;
-  background-position: ${({ isTwo }) => (isTwo ? "85% 6%" : "12% 10%")};
-
-  @media screen and (max-width: 1150px) {
-    background-position: ${({ isTwo }) => (isTwo ? "85% 6%" : "8% 6%")};
-  }
-
-  @media screen and (max-width: 675px) {
-    background-size: 400px;
-  }
-
-  @media screen and (max-width: 575px) {
-    padding: 45px 22px;
-  }
-
-  @media screen and (max-width: 500px) {
-    background-position: ${({ isTwo }) => (isTwo ? "100% 0%" : "0% 0%")};
-    background-size: 300px;
-  } */
-
-  @media screen and (max-width: 575px) {
-    padding: 45px 22px;
-  }
-`;
-const AboutWrap = styled.div`
-  max-width: 1400px;
-  position: relative;
-  margin-left: auto;
-  margin-right: auto;
-  display: flex;
-  flex-direction: ${({ isTwo }) => (isTwo ? "row-reverse" : "row")};
-
-  @media screen and (max-width: 1150px) {
-    flex-direction: column;
-  }
-`;
-const AboutColOne = styled.div`
-  width: 55%;
-
-  @media screen and (max-width: 1150px) {
-    width: 100%;
-  }
-`;
-const AboutColTwo = styled.div`
-  width: 45%;
-  display: flex;
-  align-items: center;
-
-  @media screen and (max-width: 1150px) {
-    width: 100%;
-  }
-`;
-const TextWrap = styled.div`
-  max-width: 600px;
-
-  @media screen and (max-width: 1150px) {
-    margin-top: 20px;
-  }
-`;
-const ImageWrap = styled.div`
-  width: auto;
-  padding-right: ${({ isTwo }) => !isTwo && "45px"};
-  padding-left: ${({ isTwo }) => isTwo && "45px"};
-
-  @media screen and (max-width: 1150px) {
-    padding: 0px;
-  }
-`;
-
-const ContentContainer = styled.div`
-  width: auto;
-  display: flex;
-  margin-top: 24px;
-
-  @media screen and (max-width: 550px) {
-    flex-direction: column;
-  }
-`;
-
-const ColumnLeft = styled.div`
-  width: 12%;
-
-  @media screen and (max-width: 550px) {
-    width: 100%;
-  }
-`;
-
-const ColumnRight = styled.div`
-  width: 88%;
-  padding-left: 10px;
-
-  @media screen and (max-width: 550px) {
-    padding-left: 0px;
-    width: 100%;
-  }
-`;
-
-const IconWrap = styled.div`
-  font-size: 3em;
-  color: #ce202f;
-  padding-top: 5px;
-
-  @media screen and (max-width: 550px) {
-    font-size: 2.8em;
-  }
-`;
-
-const ContentHeding = styled.h3`
-  font-size: 1.4em;
-  margin-top: 0px;
-  margin-bottom: 5px;
-`;
-
-const BgImageWrapOne = styled.div`
-  position: absolute;
-  top: -40px;
-  right: -70px;
-  z-index: -1;
-  width: 450px;
-
-  @media screen and (max-width: 650px) {
-    width: 300px;
-  }
-`;
-const BgImageWrapTwo = styled.div`
-  position: absolute;
-  top: -40px;
-  left: -70px;
-  width: 450px;
-  @media screen and (max-width: 650px) {
-    width: 300px;
-  }
-`;
 
 const About = ({ isTwo }) => {
   return (
-    <AboutContainer isTwo={isTwo}>
-      <AboutWrap isTwo={isTwo}>
+    <div className="w-auto 575:py-[90px] 575:px-[75px] py-[45px] px-[22px] ">
+      <div
+        className={`max-w-[1400px] relative ml-auto mr-auto flex flex-col 1150:flex-row flex-wrap`}
+        style={{ flexDirection: `${isTwo ? "row-reverse" : "row"}` }}
+      >
         {isTwo ? (
-          <BgImageWrapOne>
+          <div className="absolute top-[-40px] right-[-70px] z-[-1] w-[300px] 650:w-[450px]">
             <Image src={AboutBgPattern} />
-          </BgImageWrapOne>
+          </div>
         ) : (
-          <BgImageWrapTwo>
+          <div className="absolute top-[-40px] left-[-70px] 650:w-[450px] w-[300px]">
             <Image src={AboutBgPattern} />
-          </BgImageWrapTwo>
+          </div>
         )}
-        <AboutColOne>
-          <ImageWrap isTwo={isTwo}>
+        <div className="w-full 1150:w-[55%] ">
+          <div
+            className={`w-auto ${!isTwo && `1150:pr-[45px]`} ${
+              isTwo && `1150:pl-[45px]`
+            }  p-0`}
+          >
             {isTwo ? (
               <Image
                 src={SolutionImage}
@@ -188,148 +45,158 @@ const About = ({ isTwo }) => {
                 alt="Custom Wordpress and Ecommerce websites Saskatoon"
               />
             )}
-          </ImageWrap>
-        </AboutColOne>
+          </div>
+        </div>
         {isTwo ? (
-          <AboutColTwo>
-            <TextWrap>
-              <SectionHeading>
-                Why Choose <RedTextSpan>Coco Creative</RedTextSpan> ?
-              </SectionHeading>
-              <ContentContainer>
-                <ColumnLeft>
-                  <IconWrap>
+          <div className="w-full 1150:w-[45%] flex items-center">
+            <div className="max-w-[600px] mt-[20px] 1150:mt-0 ">
+              <h2 className="sectionHeading">
+                Why Choose <span className="text-red">Coco Creative</span> ?
+              </h2>
+              <div className="contentContainer">
+                <div className="aboutColWrap">
+                  <div className="aboutIconWrap">
                     <FaHandsHelping />
-                  </IconWrap>
-                </ColumnLeft>
-                <ColumnRight>
-                  <ContentHeding>Strong Client Relationships</ContentHeding>
-                  <Paragraph style={{ marginTop: "5px" }}>
+                  </div>
+                </div>
+                <div className="contentTextContainer">
+                  <h3 className="containerHeading">
+                    Strong Client Relationships
+                  </h3>
+                  <p className="sectionParagraph">
                     At Coco Creative, you are more than just another client. We
                     believe in a personalized approach to business. Our goal is
                     to build long-lasting relationships for years to come, Raj
                     and the team will ensure you are{" "}
-                    <ExternalLink
+                    <a
+                      className="externalLink"
                       href="https://www.google.com/search?q=coco+creative+testimonials&client=firefox-b-d&sxsrf=ALiCzsbgxBucg_MUOCmqqHqyzryXAIQ3Cg%3A1653956776702&ei=qGCVYtCtKuO5uvQPraGKgA8&ved=0ahUKEwjQoZiRvYj4AhXjnI4IHa2QAvAQ4dUDCA0&uact=5&oq=coco+creative+testimonials&gs_lcp=Cgdnd3Mtd2l6EAMyBQghEKABMgUIIRCgAToECAAQRzoECCMQJzoFCAAQkQI6EQguEIAEELEDEIMBEMcBEKMCOgsIABCABBCxAxCDAToRCC4QgAQQsQMQgwEQxwEQ0QM6DgguEIAEELEDEMcBEKMCOgQIABBDOgUIABCABDoLCC4QxwEQrwEQkQI6BwgAELEDEEM6BAguEEM6BwguENQCEEM6CggAELEDEIMBEEM6CAgAEIAEELEDOgsILhCABBDHARCvAToICC4QgAQQsQM6CwguEIAEELEDEIMBOgoILhCxAxCDARBDOgoILhCxAxDUAhBDOg4IABCABBCxAxCDARDJAzoFCAAQkgM6BQguEIAEOgsILhCABBCxAxDUAjoFCAAQsQM6BAgAEAo6BwgAEIAEEAo6CAgAEB4QDRAFOgYIABAeEBY6CAgAEB4QFhAKOggIABCABBDJAzoECCEQFToHCCEQChCgAUoECEEYAEoECEYYAFDFA1j8MWDWMmgJcAJ4AIABjwGIAewekgEEMC4zMpgBAKABAcgBCMABAQ&sclient=gws-wiz#lrd=0x5304f7dbffb27f7b:0xfbf01319eafa5de6,1,,,"
                       target="_blank"
                     >
                       100% satisfied with our services.
-                    </ExternalLink>{" "}
+                    </a>{" "}
                     Whether it&apos;s a minor website update or a fully-custom
                     eCommerce website, our excellent customer service is
                     consistent.
-                  </Paragraph>
-                </ColumnRight>
-              </ContentContainer>
-              <ContentContainer>
-                <ColumnLeft>
-                  <IconWrap>
+                  </p>
+                </div>
+              </div>
+              <div className="contentContainer">
+                <div className="aboutColWrap">
+                  <div className="aboutIconWrap">
                     <FaBolt />
-                  </IconWrap>
-                </ColumnLeft>
-                <ColumnRight>
-                  <ContentHeding>Exceptional Responsiveness</ContentHeding>
-                  <Paragraph style={{ marginTop: "5px" }}>
+                  </div>
+                </div>
+                <div className="contentTextContainer">
+                  <h3 className="containerHeading">
+                    Exceptional Responsiveness
+                  </h3>
+                  <p className="sectionParagraph">
                     Coco Creative promises excellent communication and
                     authenticity, We will never leave you in the dark. Raj and
                     the team are easily accessible when needed. Our word is our
                     bond, we will ensure your needs are satisfied, and concerns
                     resolved. Our 24/7 support ensures you receive help when you
                     need it most.
-                  </Paragraph>
-                </ColumnRight>
-              </ContentContainer>
-              <ContentContainer>
-                <ColumnLeft>
-                  <IconWrap>
+                  </p>
+                </div>
+              </div>
+              <div className="contentContainer">
+                <div className="aboutColWrap">
+                  <div className="aboutIconWrap">
                     <FaSearchDollar />
-                  </IconWrap>
-                </ColumnLeft>
-                <ColumnRight>
-                  <ContentHeding>
+                  </div>
+                </div>
+                <div className="contentTextContainer">
+                  <h3 className="containerHeading">
                     High Quality, Affordable Pricing
-                  </ContentHeding>
-                  <Paragraph style={{ marginTop: "5px" }}>
+                  </h3>
+                  <p className="sectionParagraph">
                     When it comes to effective modern web design, We realize not
                     every business has hundreds and thousands of dollars to
                     spend. Our affordable web design plans ensure you receive
                     the necessary services without breaking the bank. Whether
                     you are a public company or a local shop, We will work
                     together to bring your ideas to life.
-                  </Paragraph>
-                </ColumnRight>
-              </ContentContainer>
-            </TextWrap>
-          </AboutColTwo>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
         ) : (
-          <AboutColTwo>
-            <TextWrap>
-              <SectionHeading>
-                Websites that <RedTextSpan>drive results</RedTextSpan>.
-              </SectionHeading>
-              <ContentContainer>
-                <ColumnLeft>
-                  <IconWrap>
+          <div className="w-full 1150:w-[45%] flex items-center">
+            <div className="max-w-[600px] 1150:mt-0 mt-[20px]">
+              <div className="sectionHeading">
+                Websites that <span className="text-red">drive results</span>.
+              </div>
+              <div className="contentContainer">
+                <div className="aboutColWrap">
+                  <div className="aboutIconWrap">
                     <FaPalette />
-                  </IconWrap>
-                </ColumnLeft>
-                <ColumnRight>
-                  <ContentHeding>
+                  </div>
+                </div>
+                <div className="contentTextContainer ">
+                  <h3 className="containerHeading">
                     Fully-Customized & Mobile-friendly
-                  </ContentHeding>
-                  <Paragraph style={{ marginTop: "5px" }}>
+                  </h3>
+                  <p className="sectionParagraph">
                     Your website should be as unique as your business. Working
                     with our custom website design experts, We will develop a
                     website that represents and communicates the value of your
                     business. Whether it is a{" "}
-                    <ExternalLink
+                    <a
+                      className="externalLink"
                       href="https://wordpress.com/themes"
                       target="_blank"
                     >
                       {" "}
                       custom WordPress theme
-                    </ExternalLink>
+                    </a>
                     or an eCommerce website design, Coco Creative will build a
                     fully-customized, mobile-friendly website that elevates your
                     business.
-                  </Paragraph>
-                </ColumnRight>
-              </ContentContainer>
-              <ContentContainer>
-                <ColumnLeft>
-                  <IconWrap>
+                  </p>
+                </div>
+              </div>
+              <div className="contentContainer">
+                <div className="aboutColWrap">
+                  <div className="aboutIconWrap">
                     <FaChartArea />
-                  </IconWrap>
-                </ColumnLeft>
-                <ColumnRight>
-                  <ContentHeding>Industry-Leading SEO</ContentHeding>
-                  <Paragraph style={{ marginTop: "5px" }}>
+                  </div>
+                </div>
+                <div className="contentTextContainer ">
+                  <h3 className="containerHeading">Industry-Leading SEO</h3>
+                  <p className="sectionParagraph">
                     Already have an optimized website but not getting enough
                     traffic? Our{" "}
                     <Link href="/services" passhref>
-                      <InternalLink>
-                        Search Engine Optimization (SEO)
-                      </InternalLink>
+                      <span className="externalLink">
+                        Search Engine Optimization (SEO){" "}
+                      </span>
                     </Link>
                     experts have helped many local Saskatoon businesses achieve
                     top rankings on Google. Coco Creative&apos;s SEO packages
                     are affordable and effective, helping your business shine
                     amongst the noise.
-                  </Paragraph>
-                </ColumnRight>
-              </ContentContainer>
-              <ContentContainer>
-                <ColumnLeft>
-                  <IconWrap>
+                  </p>
+                </div>
+              </div>
+              <div className="contentContainer">
+                <div className="aboutColWrap">
+                  <div className="aboutIconWrap">
                     <FaDatabase />
-                  </IconWrap>
-                </ColumnLeft>
-                <ColumnRight>
-                  <ContentHeding>Reliable Web Hosting & Support</ContentHeding>
-                  <Paragraph style={{ marginTop: "5px" }}>
+                  </div>
+                </div>
+                <div className="contentTextContainer ">
+                  <h3 className="containerHeading">
+                    Reliable Web Hosting & Support
+                  </h3>
+                  <p className="sectionParagraph">
                     We offer{" "}
                     <Link href="/services" passHref>
-                      <InternalLink>top-notch hosting services </InternalLink>
+                      <span className="externalLink">
+                        top-notch hosting services{" "}
+                      </span>
                     </Link>
                     and support to keep your website running efficiently. From
                     domain registration to Wordpress hosting services, Coco
@@ -337,14 +204,14 @@ const About = ({ isTwo }) => {
                     in Saskatoon. Our flexible hosting and support plans offer
                     the necessary support to take your business to the next
                     level.
-                  </Paragraph>
-                </ColumnRight>
-              </ContentContainer>
-            </TextWrap>
-          </AboutColTwo>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
         )}
-      </AboutWrap>
-    </AboutContainer>
+      </div>
+    </div>
   );
 };
 

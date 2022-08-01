@@ -1,188 +1,10 @@
 import React, { useState, useEffect } from "react";
-import ProjectHeader from "../../components/ProjectHeader";
-import styled from "styled-components";
-import { Paragraph } from "../../styles/global";
 import MarkdownIt from "markdown-it";
-import MainCallToAction from "../../components/MainCallToAction";
 import ViewAllProjects from "../../components/custom/ViewAllProjects";
 import Head from "next/head";
 import Image from "next/image";
-import { ProjectTag, TagsWrap } from "../../components/ProjectsComponent";
 import ViewProjectBtn from "../../components/custom/ViewProjectBtn";
 import { useRouter } from "next/router";
-
-const PageWrap = styled.article`
-  padding: 150px 45px 90px 45px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  max-width: 1290px;
-  margin-left: auto;
-  margin-right: auto;
-
-  @media screen and (max-width: 630px) {
-    padding: 100px 20px 45px 20px;
-  }
-`;
-
-const HeaderWrap = styled.div`
-  display: flex;
-  align-items: flex-start;
-  justify-content: center;
-  width: 100%;
-
-  @media screen and (max-width: 1050px) {
-    flex-direction: column;
-  }
-`;
-
-const PhotoWrap = styled.div`
-  width: 100%;
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
-`;
-
-const ProjectImageWrap = styled.div`
-  position: relative;
-  width: 48%;
-  height: 550px;
-  margin: 10px;
-
-  @media screen and (max-width: 1300px) {
-    width: 550px;
-    height: 550px;
-  }
-
-  @media screen and (max-width: 1250px) {
-    width: 450px;
-    height: 450px;
-  }
-
-  @media screen and (max-width: 1050px) {
-    width: 400px;
-    height: 400px;
-  }
-  @media screen and (max-width: 550px) {
-    width: 400px;
-    height: 400px;
-  }
-
-  @media screen and (max-width: 450px) {
-    width: 325px;
-    height: 325px;
-  }
-
-  @media screen and (max-width: 390px) {
-    width: 275px;
-    height: 275px;
-  }
-`;
-
-const ColImage = styled.div`
-  width: 70%;
-
-  @media screen and (max-width: 1250px) {
-    width: 65%;
-  }
-  @media screen and (max-width: 1050px) {
-    width: 100%;
-    padding-right: auto;
-  }
-`;
-
-const ImageWrap = styled.div`
-  position: relative;
-  left: -20px;
-  width: 100%;
-  height: 500px;
-
-  @media screen and (max-width: 1250px) {
-    margin-bottom: 40px;
-  }
-
-  @media screen and (max-width: 1050px) {
-    left: 0;
-  }
-  @media screen and (max-width: 850px) {
-    height: 400px;
-  }
-  @media screen and (max-width: 600px) {
-    height: 300px;
-  }
-
-  @media screen and (max-width: 500px) {
-    height: 270px;
-  }
-`;
-
-const ColInfo = styled.div`
-  width: 30%;
-  padding-left: 20px;
-
-  @media screen and (max-width: 1250px) {
-    width: 35%;
-  }
-
-  @media screen and (max-width: 1050px) {
-    width: auto;
-  }
-
-  @media screen and (max-width: 700px) {
-    padding-left: 0px;
-  }
-`;
-const ProjectInfoWrap = styled.div`
-  width: auto;
-  padding: 0px 0px 40px 0px;
-
-  @media screen and (max-width: 1250px) {
-    padding: 0px 0px 20px 0px;
-  }
-`;
-
-const InfoHeading = styled.div`
-  font-size: 1.4em;
-  font-weight: 700;
-  text-transform: uppercase;
-  @media screen and (max-width: 1250px) {
-    font-size: 1.2em;
-  }
-`;
-
-const InfoText = styled.h3`
-  color: #cc212f;
-  font-size: 1.8em;
-  margin: 0px;
-  margin-top: 10px;
-  line-height: 40px;
-  font-weight: 700;
-  @media screen and (max-width: 1250px) {
-    font-size: 1.6em;
-    margin-top: 5px;
-  }
-`;
-
-const PageContentWrap = styled.div`
-  width: 100%;
-  text-align: left;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: flex-start;
-  padding-top: 45px;
-`;
-
-const PageHeading = styled.h1`
-  font-size: 2em;
-  margin-bottom: 0px;
-
-  @media screen and (max-width: 1050px) {
-    display: none;
-  }
-`;
 
 const ProjectDetails = ({ projects }) => {
   const router = useRouter();
@@ -209,66 +31,87 @@ const ProjectDetails = ({ projects }) => {
         />
         <meta property="og:type" content="article" />
       </Head>
-      <PageWrap>
-        <HeaderWrap>
-          <ColImage>
-            <ImageWrap>
+      <div className="flex flex-col items-center justify-center max-w-[1290px] ml-auto mr-auto 630:pt-[150px] 630:pr-[45px] 630:pb-[90px] 630:pl-[45px] pt-[100px] pr-[20px] pb-[45px] pl-[20px]">
+        <div className="flex items-start justify-center w-full 1050:flex-row flex-col">
+          <div className="1250:w-[70%] 1050:w-[65%] w-full 1050:pr-0 pr-0">
+            <div className="relative left-0 1050:left-[-20px] w-full h-[270px] 500:h-[300px] 600:h-[400px] 850:h-[500px] mb-0 1250:mb-[40px]">
               <Image
                 src={project?.projectImage?.url}
                 alt={project?.projectImage?.alternativeText}
                 layout="fill"
                 objectFit="contain"
               />
-            </ImageWrap>
-          </ColImage>
-          <ColInfo>
-            <ProjectInfoWrap>
-              <InfoHeading>Client</InfoHeading>
-              <InfoText>{project?.title}</InfoText>
-            </ProjectInfoWrap>
-            <ProjectInfoWrap>
-              <InfoHeading>Completion Date</InfoHeading>
-              <InfoText>{project?.datePublished}</InfoText>
-            </ProjectInfoWrap>
-            <ProjectInfoWrap>
-              <InfoHeading>Services</InfoHeading>
-              <TagsWrap style={{ marginTop: "10px" }}>
+            </div>
+          </div>
+          <div className="pl-0 1250:pl-[20px]  w-auto 1050:w-[35%] 1250:w-[30%]">
+            <div className="w-auto 1250:pb-[40px] pb-[20px]">
+              <div className="text-[1.2em] 1250:text-[1.4em] font-bold uppercase">
+                Client
+              </div>
+              <h3 className="text-red 1250:text-[1.8em] text-[1.6em] m-0 mt-[5px] 1250:mt-[10px] leading-[40px] font-bold">
+                {project?.title}
+              </h3>
+            </div>
+            <div className="w-auto 1250:pb-[40px] pb-[20px]">
+              <div className="text-[1.2em] 1250:text-[1.4em] font-bold uppercase">
+                Completion Date
+              </div>
+              <h3 className="text-red 1250:text-[1.8em] text-[1.6em] m-0 mt-[5px] 1250:mt-[10px] leading-[40px] font-bold">
+                {project?.datePublished}
+              </h3>
+            </div>
+            <div className="w-auto 1250:pb-[40px] pb-[20px]">
+              <div className="text-[1.2em] 1250:text-[1.4em] font-bold uppercase">
+                Services
+              </div>
+              <div className="w-auto flex flex-wrap mb-[20px] mt-[10px]">
                 {project?.project_tags?.map((tag) => (
-                  <ProjectTag key={tag.id}> {tag.projectTag} </ProjectTag>
+                  <div
+                    className="bg-white border-[2px] border-red py-[5px] px-[10px] mr-[5px] mb-[5px] rounded-[100px]"
+                    key={tag.id}
+                  >
+                    {" "}
+                    {tag.projectTag}{" "}
+                  </div>
                 ))}
-              </TagsWrap>
-            </ProjectInfoWrap>
-            <ProjectInfoWrap>
+              </div>
+            </div>
+            <div className="w-auto 1250:pb-[40px] pb-[20px]">
               <ViewProjectBtn
                 href={project.projectLink}
                 blank={true}
                 text="View website"
               />
-            </ProjectInfoWrap>
-          </ColInfo>
-        </HeaderWrap>
-        <PageContentWrap>
-          <PageHeading>{project?.title}</PageHeading>
-          <Paragraph
-            style={{ lineHeight: "35px" }}
+            </div>
+          </div>
+        </div>
+        <div className="w-full text-left flex flex-col items-start justify-start pt-[45px]">
+          <h1 className="text-[2em] mb-0 1050:block hidden">
+            {project?.title}
+          </h1>
+          <p
+            className="sectionParagraph leading-[35px]"
             dangerouslySetInnerHTML={{
               __html: md.render(project.projectLongDescription),
             }}
           />
-          <PhotoWrap>
+          <div className="w-full flex flex-wrap items-center justify-center">
             {project?.projectImages.map((image) => (
-              <ProjectImageWrap key={image?.id}>
+              <div
+                className="w-[275px] h-[275px] relative m-[10px] 1300:h-[550px] 1300:w-[48%] 1250:h-[550px] 1250:w-[550px] 1050:w-[450px] 1050:h-[450px] 450:w-[400px] 450:h-[400px] 390:w-[325px] 390:h-[325px] "
+                key={image?.id}
+              >
                 <Image
                   src={image?.url}
                   alt={image?.alternativeText}
                   layout="fill"
                 />
-              </ProjectImageWrap>
+              </div>
             ))}
-          </PhotoWrap>
-        </PageContentWrap>
+          </div>
+        </div>
         <ViewAllProjects />
-      </PageWrap>
+      </div>
     </>
   );
 };
