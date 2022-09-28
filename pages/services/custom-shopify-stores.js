@@ -150,6 +150,7 @@ const CustomShopifyStores = () => {
             <div className="mt-5 flex flex-row items-center justify-center w-[500] 1200:w-[600px]">
               {VapeMaestroImages.map((image, index) => (
                 <div
+                  key={index}
                   className={`border-2  ${
                     currImage === index ? `border-red` : `border-black`
                   } m-1 cursor-pointer hover:border-red transition-all`}

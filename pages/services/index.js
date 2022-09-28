@@ -34,12 +34,12 @@ const ServicesPageNav = [
     paragraph: (
       <div>
         At Coco Creative, we design and develop 100% fully custom websites
-        tailored to represent your company values. Whether it's custom WordPress
-        websites or Shopify eCommerce stores, no job is too complex! Over the
-        years, we have developed websites for various industries such as real
-        estate, mining technologies, politics, etc. Using our expertise and
-        best-in-class tools, we will build an elegant mobile-friendly website
-        that suits your business needs. <br /> <br />
+        tailored to represent your company values. Whether it&apos;s custom
+        WordPress websites or Shopify eCommerce stores, no job is too complex!
+        Over the years, we have developed websites for various industries such
+        as real estate, mining technologies, politics, etc. Using our expertise
+        and best-in-class tools, we will build an elegant mobile-friendly
+        website that suits your business needs. <br /> <br />
         Our websites are designed to convert visitors into paying customers and
         leads. For success, communication is key. We believe in a results-based
         approach to ensure your website is effective. Before project kick-off,
@@ -177,12 +177,13 @@ const Services = () => {
           Core <span className="text-red ">Services</span>
         </h2>
         <div className="flex flex-wrap flex-row items-center justify-center">
-          {ServicesPageNav.map((services) => (
+          {ServicesPageNav.map((services, index) => (
             <ServicesComp
               icon={services.icon}
               heading={services.heading}
               subHeading={services.subHeading}
               link={services.link}
+              key={index}
             />
           ))}
         </div>
@@ -231,12 +232,13 @@ const Services = () => {
           Other <span className="text-red ">Services</span>
         </h2>
         <div className="flex flex-wrap flex-row items-center justify-center">
-          {otherServices.map((services) => (
+          {otherServices.map((services, index) => (
             <ServicesComp
               icon={services.serviceIcon}
               heading={services.serviceName}
               subHeading={services.serviceSubheading}
               link={services.link}
+              key={index}
             />
           ))}
         </div>
