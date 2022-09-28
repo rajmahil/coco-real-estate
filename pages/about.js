@@ -2,7 +2,7 @@ import React from "react";
 import PageHeader from "../components/PageHeader";
 import RajBio from "../components/RajBio";
 import Head from "next/head";
-import Process from "../components/process";
+import Process from "../components/Process";
 
 const About = () => {
   return (
