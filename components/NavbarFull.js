@@ -220,7 +220,7 @@ const Navbar = ({ isOpen, toggle }) => {
                                 Our Founder
                               </span>
                               <p className="sectionParagraph mt-0">
-                                Here's just a few of the companies and
+                                Here&apos;s just a few of the companies and
                                 organizations that trust ABC Media.
                               </p>
                             </div>
@@ -238,7 +238,7 @@ const Navbar = ({ isOpen, toggle }) => {
                                 Our Process
                               </span>
                               <p className="sectionParagraph mt-0">
-                                Here's just a few of the companies and
+                                Here&apos;s just a few of the companies and
                                 organizations that trust ABC Media.
                               </p>
                             </div>
@@ -259,7 +259,7 @@ const Navbar = ({ isOpen, toggle }) => {
                                 Testimonials
                               </span>
                               <p className="sectionParagraph mt-0">
-                                Here's just a few of the companies and
+                                Here&apos;s just a few of the companies and
                                 organizations that trust ABC Media.
                               </p>
                             </div>
@@ -284,7 +284,7 @@ const Navbar = ({ isOpen, toggle }) => {
                                 Web Design + Development
                               </span>
                               <p className="sectionParagraph mt-0">
-                                Here's just a few of the companies and
+                                Here&apos;s just a few of the companies and
                                 organizations that trust ABC Media.
                               </p>
                             </div>
@@ -305,7 +305,7 @@ const Navbar = ({ isOpen, toggle }) => {
                                 Search Engine Optimization (SEO)
                               </span>
                               <p className="sectionParagraph mt-0">
-                                Here's just a few of the companies and
+                                Here&apos;s just a few of the companies and
                                 organizations that trust ABC Media.
                               </p>
                             </div>
@@ -326,7 +326,7 @@ const Navbar = ({ isOpen, toggle }) => {
                                 Consulting
                               </span>
                               <p className="sectionParagraph mt-0">
-                                Here's just a few of the companies and
+                                Here&apos;s just a few of the companies and
                                 organizations that trust ABC Media.
                               </p>
                             </div>
@@ -354,7 +354,7 @@ const Navbar = ({ isOpen, toggle }) => {
                                 Our Founder
                               </span>
                               <p className="sectionParagraph mt-0">
-                                Here's just a few of the companies and
+                                Here&apos;s just a few of the companies and
                                 organizations that trust ABC Media.
                               </p>
                             </div>

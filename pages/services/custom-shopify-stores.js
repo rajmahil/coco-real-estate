@@ -206,6 +206,7 @@ const CustomShopifyStores = () => {
               passHref
               href="https://vape-maestro.vercel.app/"
               target="_blank"
+              rel="noreferrer"
               className="mt-10 450:ml-0 450:mr-0 ml-auto mr-auto"
             >
               <div className="p-4 text-[1.2em] bg-red text-white hover:bg-black transition-all ">
