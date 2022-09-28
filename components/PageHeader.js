@@ -14,8 +14,8 @@ const PageHeader = ({ heading, textSpan, paragraph, projectLink }) => {
       <div className="absolute w-full h-[450px] top-0 left-0 z-[-5]">
         <Image src={PageHeaderTwo} layout="fill" objectFit="cover" />
       </div>
-      <div className="max-w-[650px] flex flex-col items-center justify-center">
-        <h1 className="text-[3.2em] font-extrabold text-center ml-auto mr-auto mb-[5px] mt-0">
+      <div className="max-w-[750px] flex flex-col items-center justify-center">
+        <h1 className="text-[2em] 500:text-[2.6em] 750:text-[3.2em] font-extrabold text-center ml-auto mr-auto mb-[5px] mt-0">
           {heading}
           <span className="text-red"> {textSpan}</span>
         </h1>

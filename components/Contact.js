@@ -49,7 +49,9 @@ const Contact = ({ isOpen, toggle }) => {
             >
               <IoCloseSharp />
             </div>
-            <ContactForm />
+            <div className=" w-[85%] 600:w-[60%] 1190:w-[400px] ml-auto mr-auto">
+              <ContactForm wScreen={true} text={true} />
+            </div>
           </motion.div>
         </motion.div>
       )}

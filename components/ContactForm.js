@@ -1,7 +1,7 @@
 import emailjs from "emailjs-com";
 import { useState } from "react";
 
-const ContactForm = () => {
+const ContactForm = ({ wScreen, text }) => {
   const [successMessage, setSuccessMessage] = useState(false);
   const [errorMessage, setErrorMessage] = useState(false);
   const [formSub, setFormSub] = useState(false);
@@ -29,17 +29,23 @@ const ContactForm = () => {
   };
 
   return (
-    <div className="w-auto h-screen flex flex-col items-center justify-center">
-      <h2 className="text-[1.5em] 600:text-[2em] text-center m-0 font-extrabold">
-        Let&apos;s Discuss Your Project!{" "}
-      </h2>
-      <div className="font-[400] m-0 text-[#333] mb-[18px] 600:mb-[24px] max-w-[450px] text-center leading-[22px] text-[0.9em] 600:mt-0 mt-[10px]">
-        Please fill out the form below. We promise to respond within 24 hours.
-      </div>
-      <form
-        className="flex flex-col items-center w-[85%] 600:w-[60%] 1190:w-[400px]"
-        onSubmit={sendEmail}
-      >
+    <div
+      className={`w-auto ${
+        wScreen ? "h-screen" : "h-fit"
+      } flex flex-col items-center justify-center`}
+    >
+      {text && (
+        <>
+          <h2 className="text-[1.5em] 600:text-[2em] text-center m-0 font-extrabold">
+            Let&apos;s Discuss Your Project!{" "}
+          </h2>
+          <div className="font-[400] m-0 text-[#333] mb-[18px] 600:mb-[24px] max-w-[450px] text-center leading-[22px] text-[0.9em] 600:mt-0 mt-[10px]">
+            Please fill out the form below. We promise to respond within 24
+            hours.
+          </div>
+        </>
+      )}
+      <form className="flex flex-col items-center w-full" onSubmit={sendEmail}>
         <input
           className="contactFormInput"
           style={{ fontFamily: "gopher, sans-serif" }}
@@ -64,7 +70,7 @@ const ContactForm = () => {
           type="tel"
           required
         />
-        <select
+        {/* <select
           className="w-full mb-[10px] 600:mb-[16px] p-[12px] 600:p-[16px] border-none bg-[#f2f2f2] text-[#7d7d7d] cursor-pointer"
           required
           name="bestTime"
@@ -123,9 +129,17 @@ const ContactForm = () => {
           >
             Night
           </option>
-        </select>
+        </select> */}
+        <input
+          className="contactFormInput"
+          style={{ fontFamily: "gopher, sans-serif" }}
+          placeholder="Your Company Name"
+          name="companyName"
+          type="text"
+          required
+        />
         <textarea
-          className="w-full h-[125px] 600:h-[150px] border-none p-[16px] bg-[#f2f2f2]"
+          className="w-full h-[125px] 600:h-[150px] border-none p-[16px] bg-[#f2f2f2] placeholder:text-gray-600"
           placeholder="Additional Comments"
           name="message"
           type="text"

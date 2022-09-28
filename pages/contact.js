@@ -22,7 +22,7 @@ const Contact = () => {
         <link rel="canonical" href="https://cococreativeweb.com/contact" />
         <meta property="og:type" content="website" />
       </Head>
-      <ContactForm />
+      <ContactForm wScreen={true} text={true} />
     </>
   );
 };

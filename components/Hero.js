@@ -63,7 +63,7 @@ const Hero = () => {
             </span>
           </p>
           <div className="flex flex-wrap items-center">
-            <Link href="/contact" passHref>
+            <Link href="/#contactForm" passHref>
               <div className="globalButton">Get A Quote</div>
             </Link>
             <Link href="/projects" passHref>

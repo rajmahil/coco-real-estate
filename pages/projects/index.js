@@ -26,7 +26,7 @@ const ProjectPage = ({ projects }) => {
       <PageHeader
         heading="Our"
         textSpan="Portfolio"
-        paragraph="Here is a look into our latest projects!"
+        paragraph="Here is a look at our latest projects!"
       />
       <div className="max-w-[1400px] ml-auto mr-auto py-[90px] px-[26px]">
         <div className="mt-[40px] flex flex-wrap justify-between">

@@ -2,6 +2,7 @@ import React from "react";
 import PageHeader from "../components/PageHeader";
 import RajBio from "../components/RajBio";
 import Head from "next/head";
+import Process from "../components/process";
 
 const About = () => {
   return (
@@ -30,6 +31,7 @@ const About = () => {
         paragraph="Since 2015, We've helped many construction business owners generate exceptional results. Learn more about us below!"
       />{" "}
       <RajBio />
+      <Process />
     </>
   );
 };

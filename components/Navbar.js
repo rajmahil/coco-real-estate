@@ -84,24 +84,25 @@ const Navbar = ({ isOpen, toggle }) => {
             animate={isMenuOpen ? "open" : "closed"}
             exit="exit"
           >
-            <div className="flex 750:flex-row flex-col items-center justify-between ml-auto mr-auto w-full max-w-[1400px] py-0 px-[20px] 750:h-auto h-full ">
+            <div className="flex 750:flex-row flex-col items-center justify-between ml-auto mr-auto w-full max-w-[1400px] py-2 px-[20px] 750:h-auto h-full ">
               <Link passHref href="/about">
-                <div className="menuItem" onClick={menuToggle}>
+                <div className="menuNav" onClick={menuToggle}>
                   About
                 </div>
               </Link>
               <Link passHref href="/services">
-                <div className="menuItem" onClick={menuToggle}>
+                <div className="menuNav" onClick={menuToggle}>
                   Services
                 </div>
               </Link>
               <Link passHref href="/projects">
-                <div className="menuItem" onClick={menuToggle}>
+                <div className="menuNav" onClick={menuToggle}>
                   Portfolio
                 </div>
               </Link>
+
               <Link passHref href="/contact">
-                <div className="menuItem" onClick={menuToggle}>
+                <div className="menuNav" onClick={menuToggle}>
                   Contact Us
                 </div>
               </Link>
