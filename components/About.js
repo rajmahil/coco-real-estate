@@ -14,17 +14,17 @@ import {
 
 const About = ({ isTwo }) => {
   return (
-    <div className="w-auto 575:py-[90px] 575:px-[75px] py-[45px] px-[22px] ">
+    <div className="w-auto 575:py-[90px] 575:px-[75px] py-[45px] px-[22px] overflow-hidden">
       <div
         className={`max-w-[1400px] relative ml-auto mr-auto flex flex-col 1150:flex-row flex-wrap`}
         style={{ flexDirection: `${isTwo ? "row-reverse" : "row"}` }}
       >
         {isTwo ? (
-          <div className="absolute top-[-40px] right-[-70px] z-[-1] w-[300px] 650:w-[450px]">
+          <div className="absolute 500:top-[-40px] top-0 right-0 500:right-[-70px] z-[-1] w-[300px] 650:w-[450px]">
             <Image src={AboutBgPattern} />
           </div>
         ) : (
-          <div className="absolute top-[-40px] left-[-70px] 650:w-[450px] w-[300px]">
+          <div className="absolute 500:top-[-40px] top-0 left-0 500:left-[-70px] 650:w-[450px] w-[300px]">
             <Image src={AboutBgPattern} />
           </div>
         )}

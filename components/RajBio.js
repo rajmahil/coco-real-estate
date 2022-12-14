@@ -7,12 +7,12 @@ import RajMahilSignature from "../public/Images/RajMahilSignature.png";
 const RajBio = () => {
   return (
     <div className="py-[45px] px-[26px] 750:py-[90px] 750:px-[75px] relative flex items-center justify-center ">
-      <div className="absolute z-[-1] top-[8%] 1700:left-[12%] left-[8%] w-[350px]">
+      <div className="absolute z-[-1] top-0 1190:top-[8%] 1700:left-[12%] left-0 1190:left-[8%] w-[250px] 1190:w-[350px]">
         <Image src={bioBackground} />
       </div>
       <div className="w-full max-w-[1240px] flex items-center justify-center 1250:flex-row flex-col">
-        <div className="1250:w-full w-[55%] flex mr-auto 1250:mr-[75px] max-w-[650px] overflow-hidden ">
-          <div className="w-full relative 650:h-[700px] 450:h-[500px] 375:h-[400px] h-[350px]">
+        <div className="w-full flex mr-auto 1250:mr-[75px] max-w-[650px] overflow-hidden ">
+          <div className="w-full relative 1190:h-[700px] 450:h-[600px] 375:h-[400px] h-[350px]">
             <Image src={rajMahilImage} layout="fill" objectFit="contain" />
           </div>
         </div>
